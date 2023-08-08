@@ -68,10 +68,10 @@ const Index = () => {
     //     );
     // });
     const openWhatsAppChat = () => {
-        const phoneNumber = '+92 3357944011'; // Replace with your WhatsApp phone number
+        const phoneNumber = '+923357944011'; // Replace with your WhatsApp phone number
 
         // Construct the WhatsApp chat URL
-        const url = `https://api.whatsapp.com/send?phone=${phoneNumber}`;
+        const url = `https://wa.me/${phoneNumber}`;
 
         // Open the WhatsApp chat in a new tab
         window.open(url, '_blank');
@@ -82,7 +82,7 @@ const Index = () => {
             <Row className='m-0'>
                 <Col md="6" className=' hero-first-col'>
                     <div className='hero-heading'>
-                        <h1>Give your business or digital edge & reach more cutomers online! </h1>
+                        <h1>Give your business a digital edge!<br />Let us help you reach  more cutomers online!! </h1>
                         <div className='button'>
                             <Link className="elementor-button elementor-button-link elementor-size-sm" to="/webpage">
                                 <span className="elementor-button-content-wrapper">
@@ -111,14 +111,10 @@ const Index = () => {
                             <li>Client satisfaction and testimonials</li>
                         </ul>
                         </p>
-
                     </div>
-
-
-
                 </Col>
                 <Col md="6" className=' hero-first-col'>
-                    <div className='hero-heading'>
+                    <div className='hero-headingour'>
                         <h1>Our Process: </h1>
                         <p>
                             <ul>

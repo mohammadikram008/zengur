@@ -351,7 +351,7 @@ export default function Navbar() {
 
                                     className="nav-item"
                                     variant="text"
-
+                                    id={navbarOpen ? "nav-btn-open" : ""}
                                     style={{
                                         color: "white",
                                         margin: "auto 23px",

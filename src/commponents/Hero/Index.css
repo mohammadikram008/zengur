@@ -13,8 +13,23 @@
   width: 350px;
   margin-left: 40px;
 }
+.hero-headings p {
+  margin-top: 20px;
+}
+.hero-headings h1 {
+  margin-left: 20px;
+}
 .hero-heading {
   width: 320px;
+}
+.hero-headingour {
+  width: 320px;
+}
+.hero-headingour h1 {
+  margin-left: 20px;
+}
+.hero-headingour p {
+  margin-top: 20px;
 }
 .hero-colimg {
   margin-top: 50px;
@@ -53,25 +68,29 @@
   .hero-first-col {
     flex-direction: column;
   }
+  .hero-colimg img {
+    width: 300px;
+  }
 }
 /* WhatsAppButton.css */
 .whatsapp-button {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  width: 50px;
-  height: 50px;
-  background-color: #25d366; /* WhatsApp green color */
+  width: 55px;
+  height: 55px;
+  /* opacity: 0.9; */
+  /* WhatsApp green color */
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+  /* box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2); */
 }
 
 .whatsapp-button img {
-  width: 100%;
+  width: 80%;
   height: auto;
   border-radius: 50%;
 }

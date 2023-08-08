@@ -27,8 +27,10 @@ const OurServices = () => {
                         <div className='services-img'><img src={art}></img></div>
                         <div className='services-content'>
                             <h1>Graphic Design & Brading </h1>
-                            <p>
-                                Ignite your brand's success with our powerful Graphic Design and Branding services. Our expert designers craft visuals that captivate and drive impact, creating a cohesive brand identity that resonates. Elevate your brand today for lasting impressions. Contact us now and unlock the true potential of compelling design and branding.</p>  <img src={arrow} className='arrow' />
+                            {/* Ignite your brand's success with our powerful Graphic Design and Branding services. Our expert designers craft visuals that captivate and drive impact, creating a cohesive brand identity that resonates. Elevate your brand today for lasting impressions. Contact us now and unlock the true potential of compelling design and branding.</p>  */}
+
+                            <p> Branding & Design services are people’s view and the perception that makes your business visible as well as reliable. Like: Logo, Business Stationery Design,Contact us now and unlock the true potential of compelling design and branding.</p>
+                            <img src={arrow} className='arrow' />
                         </div>
                     </div>
                 </Col>
@@ -37,9 +39,7 @@ const OurServices = () => {
                         <div className='services-img'><img src={web}></img></div>
                         <div className='services-content'>
                             <h1>Web Design & Development</h1>
-                            <p>
-                                Branding & Design
-                                Branding and design services are people’s view and the perception that makes your business visible as well as reliable. Like: Logo, Business Stationery Design,Contact us now and unlock the true potential of compelling design and branding.</p>
+                            <p>At Zengur, we blend creativity and technology to craft websites that make a lasting impact. Our team of skilled designers and developers collaborate seamlessly to create an interactive and convincing experience that engages visitors and drives results.</p>
                             <img src={arrow} className='arrow' />
                         </div>
                     </div>
@@ -63,16 +63,17 @@ const OurServices = () => {
                         <h1>Application Development</h1>
                         <p>
 
-                            Data leaks, breaches, or mass corruption equate to serious devastation. Not just because you’ve lost a valuable asset, but your reputation, and market cap could be at stake. Communication Square's .</p>
+                            Empower your business with our innovative application development services designed to drive growth, efficiency, and user engagement. At Zengur, we combine technology expertise, creative vision, and industry insights to craft tailored applications that meet your unique needs.
+                        </p>
                         <img src={arrow} className='arrow' />
                     </div>
                 </div></Col>
                 <Col md='4'><div className='services-card'>
                     <div className='services-img'><img src={domainhost}></img></div>
                     <div className='services-content'>
-                        <h1>Domain & Hosting</h1>
+                        <h1>Domain & Hosting Services</h1>
                         <p>
-                            Sometimes the best advocates for your brand or business are your current patrons! Be sure to check the “Community” tab on your Facebook page and see what your customers are saying.</p>
+                            Enhance your digital presence with our comprehensive domain and hosting services designed to provide a reliable foundation for your online ventures. At Zengur, we offer a seamless experience to secure your domain name and provide robust hosting solutions that ensure your website's accessibility and performance.</p>
                         <img src={arrow} className='arrow' />
                     </div>
                 </div></Col>
