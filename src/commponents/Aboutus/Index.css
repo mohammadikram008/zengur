@@ -1,0 +1,76 @@
+.about-us {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px;
+}
+
+.about-title {
+  font-size: 36px;
+  font-weight: bold;
+  color: black;
+  margin-bottom: -10px;
+}
+
+.about-description {
+  font-size: 18px;
+  margin-top: 20px;
+}
+
+.about-team-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 30px;
+}
+
+.team-member {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.member-icon {
+  font-size: 24px;
+  margin-right: 10px;
+}
+
+.member-name {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.member-role {
+  font-size: 14px;
+  color: #666;
+}
+
+.contact-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 40px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+.contact-items {
+  display: flex;
+  align-items: center;
+  margin-top: 30px;
+}
+.contact-icon {
+  font-size: 24px;
+  margin-right: 10px;
+}
+
+.contact-text {
+  font-size: 18px;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .about-us {
+    padding: 20px;
+  }
+}

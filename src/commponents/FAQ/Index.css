@@ -1,0 +1,61 @@
+.faq-section {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.faq-title {
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  margin-left: 10px;
+  color: black; /* Zengur Company's primary color */
+}
+
+.faq-list {
+  text-align: start;
+}
+
+.faq-item {
+  border-bottom: 1px solid #eaeaea;
+  padding: 10px;
+}
+
+.question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.question-text {
+  font-size: 20px;
+}
+
+.toggle-button {
+  width: 30px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  color: #557292; /* Zengur Company's primary color */
+}
+.toggle-button:hover {
+  background-color: white;
+  color: #775151;
+}
+.answer {
+  max-height: 150px;
+  margin-top: 10px;
+  color: #557292;
+  overflow: hidden;
+  transition: max-height 0.2s ease;
+}
+
+.faq-item.active .answer {
+  max-height: 100px;
+}

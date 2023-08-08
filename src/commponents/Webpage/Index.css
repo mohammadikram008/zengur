@@ -1,0 +1,78 @@
+.webpage-bg {
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  height: 100vh;
+  margin-top: -50px;
+  background: url("../../commponents/assets/Images/webpagebg.jpg") no-repeat
+    center center/cover;
+}
+.contact-form {
+  max-width: 450px;
+  /* margin: 0 auto; */
+  padding: 20px;
+
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 10px;
+  margin-top: 50px;
+  /* position: absolute; */
+  background-color: aliceblue;
+}
+
+label,
+input,
+textarea,
+select {
+  display: block;
+  margin-bottom: 10px;
+  width: 100%;
+  padding: 8px;
+  font-size: 16px;
+}
+.name-div {
+  display: flex;
+}
+#lastname {
+  margin-left: 5px;
+}
+.button {
+  border-radius: 10px;
+  background-color: #0c7489;
+}
+.divider {
+  content: "";
+  /* position: absolute; */
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #119da4; /* Replace with your desired line color */
+}
+textarea {
+  resize: vertical;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  font-size: 18px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .contact-form {
+    max-width: 90%;
+  }
+}

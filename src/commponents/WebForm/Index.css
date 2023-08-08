@@ -1,0 +1,102 @@
+.webform-bg {
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  width: 100%;
+  /* max-height: 100%; */
+  margin-top: -50px;
+  /* background: url("../../commponents/assets/Images/webformbg.jpg") no-repeat
+    center center/cover; */
+}
+.radio-btn {
+  display: flex;
+  /* justify-content: center; */
+  /* align-items: center; */
+  width: 30%;
+}
+.contact-form {
+  max-width: 450px;
+  /* margin: 0 auto; */
+  padding: 20px;
+  border: 1px solid black;
+  /* display: flex; */
+  /* justify-content: center; */
+  /* align-items: center; */
+  flex-direction: column;
+  border-radius: 10px;
+  margin-top: 50px;
+  /* position: absolute; */
+  background-color: aliceblue;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+  width: 30%;
+  padding: 8px;
+  font-size: 16px;
+}
+.name-div {
+  display: flex;
+}
+#lastname {
+  margin-left: 5px;
+}
+.button {
+  border-radius: 10px;
+  background-color: #0c7489;
+}
+.heading {
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+/* #name {
+  width: 100%;
+} */
+.form-div {
+  display: flex;
+  width: 100%;
+  margin-top: 10px;
+}
+.domian-div {
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  flex-direction: column;
+}
+.divider {
+  content: "";
+  /* position: absolute; */
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  height: 2px;
+  background-color: #119da4; /* Replace with your desired line color */
+}
+textarea {
+  resize: vertical;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  font-size: 18px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .contact-form {
+    max-width: 90%;
+  }
+}
