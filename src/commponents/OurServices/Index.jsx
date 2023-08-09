@@ -13,8 +13,25 @@ import './Index.css'
 import { useNavigate } from 'react-router-dom';
 const OurServices = () => {
     const navigate = useNavigate();
-    const handleChange = () => {
-        navigate('/webpage');
+    const handleChange = (props) => {
+        console.log("porps", props)
+        if (props === "webdesign") {
+            navigate('/webpage');
+        } else if (props === "seoform") {
+            navigate('/seoform');
+        }
+        else if (props === "graphicdesgin") {
+            navigate('/graphicdesgin');
+        }
+        else if (props === "applicationdev") {
+            navigate('/applicationdev');
+        }
+        else if (props === "domianhosting") {
+            navigate('/domianhosting');
+        }
+        else if (props === "maintenacesupport") {
+            navigate('/maintenacesupport');
+        }
     }
     return (
         <Fragment>
@@ -23,7 +40,7 @@ const OurServices = () => {
             </div>
             <Row className='m-0 main-row'>
                 <Col md='4' sm='12'>
-                    <div className='services-card'>
+                    <div className='services-card' onClick={(e) => handleChange("graphicdesgin")}>
                         <div className='services-img'><img src={art}></img></div>
                         <div className='services-content'>
                             <h1>Graphic Design & Brading </h1>
@@ -35,7 +52,7 @@ const OurServices = () => {
                     </div>
                 </Col>
                 <Col md='4' sm='12' xs='12'>
-                    <div className='services-card' onClick={handleChange}>
+                    <div className='services-card' onClick={(e) => handleChange("webdesign")}>
                         <div className='services-img'><img src={web}></img></div>
                         <div className='services-content'>
                             <h1>Web Design & Development</h1>
@@ -45,8 +62,9 @@ const OurServices = () => {
                     </div>
                 </Col>
 
-                <Col md='4' sm='12' xs='12'><div className='services-card'>
-                    <div className='services-img'><img src={documents}></img></div>
+                <Col md='4' sm='12' xs='12'><div className='services-card' onClick={(e) => handleChange("seoform")}>
+                    <div className='services-img'>
+                        <img src={documents}></img></div>
                     <div className='services-content'>
                         <h1>Search Engine Optimization</h1>
                         <p>
@@ -57,7 +75,7 @@ const OurServices = () => {
                 </div></Col>
             </Row>
             <Row className='m-0 main-row'>
-                <Col md='4' sm='12' xs='12'><div className='services-card'>
+                <Col md='4' sm='12' xs='12'><div className='services-card' onClick={(e) => handleChange("applicationdev")}>
                     <div className='services-img'><img src={app}></img></div>
                     <div className='services-content'>
                         <h1>Application Development</h1>
@@ -68,7 +86,7 @@ const OurServices = () => {
                         <img src={arrow} className='arrow' />
                     </div>
                 </div></Col>
-                <Col md='4'><div className='services-card'>
+                <Col md='4'><div className='services-card' onClick={(e) => handleChange("domianhosting")}>
                     <div className='services-img'><img src={domainhost}></img></div>
                     <div className='services-content'>
                         <h1>Domain & Hosting Services</h1>
@@ -77,7 +95,7 @@ const OurServices = () => {
                         <img src={arrow} className='arrow' />
                     </div>
                 </div></Col>
-                <Col md='4'><div className='services-card'>
+                <Col md='4'><div className='services-card' onClick={(e) => handleChange("maintenacesupport")}>
                     <div className='services-img'><img src={support}></img></div>
                     <div className='services-content'>
                         <h1>Maintenance & Support</h1>

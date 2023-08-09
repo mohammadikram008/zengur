@@ -1,7 +1,17 @@
 import React, { useState } from 'react'
 import { AiOutlinePlus, AiOutlineMinus } from 'react-icons/ai';
+import whatsappicon from '../assets/Images/whatsappicon.jpg'
 import './Index.css'
 const Index = () => {
+    const openWhatsAppChat = () => {
+        const phoneNumber = '+923357944011'; // Replace with your WhatsApp phone number
+
+        // Construct the WhatsApp chat URL
+        const url = `https://wa.me/${phoneNumber}`;
+
+        // Open the WhatsApp chat in a new tab
+        window.open(url, '_blank');
+    };
     const [activeIndex, setActiveIndex] = useState(null);
 
     const handleToggle = (index) => {
@@ -49,6 +59,10 @@ const Index = () => {
                         )}
                     </div>
                 ))}
+            </div>
+            <div className="whatsapp-button" onClick={openWhatsAppChat}>
+                {/* <a href="https://www.flaticon.com/free-icons/whatsapp" title="whatsapp icons">Whatsapp icons created by Hight Quality Icons - Flaticon</a> */}
+                <img src={whatsappicon} alt="WhatsApp Icon" />
             </div>
         </div>
 

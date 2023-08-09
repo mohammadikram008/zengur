@@ -7,9 +7,15 @@ import WebForm from './commponents/WebForm/Index.jsx'
 import FAQ from './commponents/FAQ/Index.jsx'
 import { Link as ScrollLink, animateScroll as scroll } from 'react-scroll';
 import Aboutus from './commponents/Aboutus/Index.jsx'
+import SeoForm from './commponents/SeoForm/Index.jsx'
+import Applicationdev from './commponents/ApplicationDev/Index.jsx'
+import GraphicDesign from './commponents/GraphicForm/Index.jsx'
+import DomianHosting from './commponents/DomianHosting/Index.jsx'
+import MaintanenceSupport from './commponents/MaintanceneSupport/Index.jsx'
+import { Fragment } from 'react';
 function App() {
   return (
-    <div className="App">
+    <Fragment>
 
       <Navbar />
       <Routes>
@@ -18,6 +24,11 @@ function App() {
         <Route path='/webform' element={<WebForm />}></Route>
         <Route path='/faq' element={<FAQ />}></Route>
         <Route path='/aboutus' element={<Aboutus />}></Route>
+        <Route path='/seoform' element={<SeoForm />}></Route>
+        <Route path='/applicationdev' element={<Applicationdev />}></Route>
+        <Route path='/graphicdesgin' element={<GraphicDesign />}></Route>
+        <Route path='/domianhosting' element={<DomianHosting />}></Route>
+        <Route path='/maintenacesupport' element={<MaintanenceSupport />}></Route>
       </Routes>
       {/* <ScrollLink
         to="about-section" // Replace 'home-section' with the ID of the section you want to scroll to
@@ -29,7 +40,8 @@ function App() {
       >
         Scroll To Top
       </ScrollLink> */}
-    </div>
+
+    </Fragment >
   );
 }
 

@@ -10,7 +10,7 @@
 }
 .nav-bar {
   height: 80px;
-
+  width: 100%;
   /* overflow-x: hidden; */
 }
 .logo-img {

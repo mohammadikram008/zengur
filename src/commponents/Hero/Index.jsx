@@ -97,13 +97,13 @@ const Index = () => {
 
 
                 </Col>
-                <Col md="6" className=' hero-first-col'>
+                <Col md="6" className=' hero-first-cols'>
                     <div className='hero-colimgs'>
                         <img src={chooseus} alt='image' />
                     </div>
                     <div className='hero-headings'>
                         <h1>Why Choose Us: </h1>
-                        <p><ul>
+                        <p><ul className='build-points'>
                             <li> Creative and innovative designs</li>
                             <li>Attention to detail and user-centric approach</li>
                             <li> Timely project delivery</li>
@@ -117,18 +117,13 @@ const Index = () => {
                     <div className='hero-headingour'>
                         <h1>Our Process: </h1>
                         <p>
-                            <ul>
+                            <ul className='build-points'>
                                 <li> Design and mockup creation</li>
                                 <li> Development and coding</li>
                                 <li> Testing and quality assurance</li>
                                 <li> Client feedback and revisions</li>
                                 <li> Launch and deployment</li>
                             </ul>
-
-
-
-
-
                         </p>
 
                     </div>

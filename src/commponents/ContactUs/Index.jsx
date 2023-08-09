@@ -171,24 +171,24 @@ const index = () => {
                                 </a>
                             </li>
                         </ul> */}
-                        <div className="contact-item">
+                        <div className="contact-itemes">
                             <LocationOnIcon />
 
-                            <span className="contact-text">12 Baltimore St,<br />St.John’s , NL, Canada(A1B 3P9 )</span>
+                            <span className="contact-text">12 Baltimore St,<br />St.John’s , NL, <br />Canada(A1B 3P9 )</span>
                         </div>
-                        <div className="contact-item">
+                        <div className="contact-itemes">
                             <WhatsAppIcon />
                             <a className="contact_event_btn" href="https://api.whatsapp.com/send?phone=+1(709)693-9434&amp;text=Hi%2C%20I%E2%80%99m%20interested%20in%20zengur%20kindly%20send%20me%20more%20information%20about%20the%20project%2C%20pricing%20and%20availability.%20Thank%20you!"> +1(709)693-9434</a>
 
 
                         </div>
                         <div className='divider' ></div>
-                        <div className="contact-items ">
+                        <div className="contact-itemes ">
                             <LocationOnIcon />
 
-                            <span className="contact-text">12 floor office no 1201,<br />Green trust tower,F6/1 Islamabad</span>
+                            <span className="contact-text">12 floor office no 1201,<br />Green trust tower,F6/1<br /> Islamabad Pakistan</span>
                         </div>
-                        <div className="contact-item">
+                        <div className="contact-itemes">
                             <WhatsAppIcon />
                             <a className="contact_event_btn" href="https://api.whatsapp.com/send?phone=+923357944011&amp;text=Hi%2C%20I%E2%80%99m%20interested%20in%20zengur%20kindly%20send%20me%20more%20information%20about%20the%20project%2C%20pricing%20and%20availability.%20Thank%20you!">+92 3357944011</a>
 
