@@ -61,26 +61,18 @@ const Index = () => {
     };
     return (
         <Fragment>
+
             <div className='webform-bg'>
                 <Row className='m-0 '>
                     <Col>
-                        <form className="contact-form" onSubmit={handleSubmit}>
+                        {window.location.href = "https://docs.google.com/forms/d/e/1FAIpQLSeCv_4GIPw0YDgfxyqHVZ_wrc-DzTQ805yMJZPadKc2XP36EA/viewform?usp=sf_link"}
+
+                        {/* <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSe9sScRWvI7Tu16ql6FBt7PS1npEyyHiMrgDczpPLkLxrGPFA/viewform?embedded=true" width="640" height="1709" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe> */}
+
+
+                        {/* <form className="contact-form" onSubmit={handleSubmit}>
                             <h3>Tell us what you want.</h3>
-                            {/* <label htmlFor="selectedOption">Business type:</label>
-                        <select
-                            id="selectedOption"
-                            name="selectedOption"
-                            value={formData.selectedOption}
-                            onChange={handleInputChange}
-                            required
-                        >
-                            <option value="">Select Business type</option>
-                            <option value="Option 1">Digital agency
-                            </option>
-                            <option value="Option 2">Advertising</option>
-                            <option value="Option 3"> Club</option>
-                            <option value="Option 3"> Event production</option>
-                        </select> */}
+
                             <div className='divider' ></div>
                             <div className='form-div'>
                                 <label htmlFor="name" >Website Type</label>
@@ -148,7 +140,7 @@ const Index = () => {
 
                                 />
                             </div>
-                            {/* <div className='form-div'> */}
+
                             <span htmlFor="question"> Add 3 main services/features your company provides</span>
 
                             <input
@@ -178,7 +170,7 @@ const Index = () => {
                                 onChange={handleInputChange}
 
                             />
-                            {/* </div> */}
+
                             <div className='form-div'>
 
                                 <label htmlFor="question">Describe your company briefly</label>
@@ -345,22 +337,12 @@ const Index = () => {
                                     ></textarea>
                                 </div>
                             </div>
-                            {/* <h3>if yes,</h3>
-                            <input
-                                type="tel"
-                                id="contactNumber"
-                                name="contactNumber"
-                                placeholder='Brand Name'
-                                value={formData.contactNumber}
-                                onChange={handleInputChange}
-
-                            /> */}
                             <div className='divider' ></div>
                             <h2 className="heading"> Thank you for sharing your preferences.</h2>
                             <p>We will meet your expectations.</p>
 
                             <button type="submit" className='button'>Submit</button>
-                        </form>
+                        </form> */}
                     </Col>
                 </Row>
             </div>

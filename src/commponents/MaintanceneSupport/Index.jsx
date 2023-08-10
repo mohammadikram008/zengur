@@ -43,7 +43,9 @@ const Index = () => {
 
     return (
         <div className="form-container">
-            <h1 className="form-title">Maintanenece & Support  Requirement Form!</h1>
+            {window.location.href = "https://docs.google.com/forms/d/e/1FAIpQLSc9ugEvIXDjNdA7xUkOCFTSeJp4HeHU3P_ad6z8s4eo9DWmgg/viewform?usp=sf_link"}
+
+            {/* <h1 className="form-title">Maintanenece & Support  Requirement Form!</h1>
             <form onSubmit={handleSubmit} className="formseo">
                 <h2>Website Details:</h2>
                 <div className='form-div'>
@@ -160,189 +162,12 @@ const Index = () => {
 
                     />
                 </div>
-                {/* <div className='form-div'>
-                    <label className="form-label">Additional Domain Names (if needed):</label>
-                    <input
-                        type="text"
-                        id="desiredOutcomes"
-                        name="desiredOutcomes"
-                        value={formData.desiredOutcomes}
-                        onChange={handleChange}
-                        placeholder=' (if any)'
-                        className="form-input"
-
-                    />
-                </div>
-                <div className='form-div'>
-                    <label className="form-label">Domain Privacy Protection (Yes/No):</label>
-                    <input
-                        type="text"
-                        id="desiredOutcomes"
-                        name="desiredOutcomes"
-                        value={formData.desiredOutcomes}
-                        onChange={handleChange}
-                        placeholder=' (if any)'
-                        className="form-input"
-
-                    />
-                </div>
-                <h2>Hosting Requirements:</h2>
-                <div className='form-div'>
-                    <label className="form-label">Hosting Type :</label>
-                    <input
-                        type="text"
-                        id="desiredOutcomes"
-                        name="desiredOutcomes"
-                        value={formData.desiredOutcomes}
-                        onChange={handleChange}
-                        placeholder='(Shared, VPS, Dedicated, Cloud, etc.)'
-                        className="form-input"
-
-                    />
-                </div>
-                <div className='form-div'>
-                    <label className="form-label">Storage Space Needed:</label>
-                    <input
-                        type="text"
-                        id="desiredOutcomes"
-                        name="desiredOutcomes"
-                        value={formData.desiredOutcomes}
-                        onChange={handleChange}
-                        placeholder=' (if known)'
-                        className="form-input"
-
-                    />
-                </div>
-                <div className='form-div'>
-                    <label className="form-label">Bandwidth/Transfer Limit:</label>
-                    <input
-                        type="text"
-                        id="desiredOutcomes"
-                        name="desiredOutcomes"
-                        value={formData.desiredOutcomes}
-                        onChange={handleChange}
-                        placeholder=' (if any)'
-                        className="form-input"
-
-                    />
-                </div>
-                <div className='form-div'>
-                    <label className="form-label">Operating System Preference (if applicable):</label>
-                    <input
-                        type="text"
-                        id="desiredOutcomes"
-                        name="desiredOutcomes"
-                        value={formData.desiredOutcomes}
-                        onChange={handleChange}
-                        placeholder='(if applicable)'
-                        className="form-input"
-
-                    />
-                </div>
-                <div className='form-div'>
-                    <label className="form-label">Control Panel Preference (if applicable):</label>
-                    <input
-                        type="text"
-                        id="desiredOutcomes"
-                        name="desiredOutcomes"
-                        value={formData.desiredOutcomes}
-                        onChange={handleChange}
-                        placeholder='(if applicable)'
-                        className="form-input"
-
-                    />
-                </div>
-                <h2>Technical Specifications:</h2>
-                <div className='form-div'>
-
-                    <label className="form-label">Website Platform/CMS :</label>
-                    <input
-                        type="text"
-                        id="desiredOutcomes"
-                        name="desiredOutcomes"
-                        value={formData.desiredOutcomes}
-                        onChange={handleChange}
-                        className="form-input"
-                        placeholder='(e.g., shopify, WordPress, Joomla, etc.)'
-                        required
-                    />
-                </div>
-
-
-                <div className='form-div'>
-
-                    <label className="form-label"> Database Requirements (if applicable):</label>
-                    <input
-                        type="text"
-                        id="desiredOutcomes"
-                        name="desiredOutcomes"
-                        value={formData.desiredOutcomes}
-                        onChange={handleChange}
-                        className="form-input"
-                        required
-                    />
-                </div>
-                <div className='form-div'>
-
-                    <label className="form-label"> Email Hosting Requirements (if applicable):</label>
-                    <input
-                        type="text"
-                        id="desiredOutcomes"
-                        name="desiredOutcomes"
-                        value={formData.desiredOutcomes}
-                        onChange={handleChange}
-                        className="form-input"
-                        required
-                    />
-                </div>
-                <div className='form-div'>
-
-                    <label className="form-label"> SSL Certificate Needed:</label>
-                    <input
-                        type="text"
-                        id="desiredOutcomes"
-                        name="desiredOutcomes"
-                        value={formData.desiredOutcomes}
-                        onChange={handleChange}
-                        className="form-input"
-                        placeholder=' (Yes/No)'
-                        required
-                    />
-                </div>
-
-                <h2>Additional Services:</h2>
-                <div className='form-div'>
-
-                    <label className="form-label">Content Migration/Transfer :</label>
-                    <input
-                        type="text"
-                        id="desiredOutcomes"
-                        name="desiredOutcomes"
-                        value={formData.desiredOutcomes}
-                        onChange={handleChange}
-                        className="form-input"
-                        placeholder='(Yes/No)'
-                        required
-                    />
-                </div>
-                <div className='form-div'>
-
-                    <label className="form-label">Backup and Restore Services:</label>
-                    <input
-                        type="text"
-                        id="desiredOutcomes"
-                        name="desiredOutcomes"
-                        value={formData.desiredOutcomes}
-                        onChange={handleChange}
-                        className="form-input"
-
-                    />
-                </div> */}
+            
                 <div className='seo-button'>
 
                     <button type="submit" className="submit-button">Submit</button>
                 </div>
-            </form>
+            </form> */}
         </div>
     );
 };

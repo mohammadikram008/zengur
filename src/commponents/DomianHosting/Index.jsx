@@ -43,7 +43,9 @@ const Index = () => {
 
     return (
         <div className="form-container">
-            <h1 className="form-title">Domian & Hosting  Requirement Form!</h1>
+            {window.location.href = "https://docs.google.com/forms/d/e/1FAIpQLSf5t-w8IGcos3UFzwLaS_iCpjTgzF31A10BiMoVRJRAVUZ96g/viewform?usp=sf_link"}
+
+            {/* <h1 className="form-title">Domian & Hosting  Requirement Form!</h1>
             <form onSubmit={handleSubmit} className="formseo">
                 <h2>Project Details:</h2>
                 <div className='form-div'>
@@ -284,7 +286,7 @@ const Index = () => {
 
                     <button type="submit" className="submit-button">Submit</button>
                 </div>
-            </form>
+            </form> */}
         </div>
     );
 };

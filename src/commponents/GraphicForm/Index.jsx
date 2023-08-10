@@ -1,16 +1,38 @@
 import React, { useState } from 'react'
 import './Index.css'
+import emailjs from "@emailjs/browser";
 const Index = () => {
     const [formData, setFormData] = useState({
-        companyName: '',
-        websiteURL: '',
-        targetKeywords: '',
-        competitors: '',
-        desiredOutcomes: '',
-        additionalNotes: ''
+        log: '',
+        other: '',
+        font: '',
+        size: '',
+        style: '',
+        targetaudience: '',
+        Purpose: '',
+        KeyInformationtoInclude: '',
+        CalltoAction: '',
+        DesignStylePreferences: '',
+        AnyOtherSpecificRequirements: '',
+        DeliveryMethod: '',
+        DropBoxinserthere: '',
+
     });
     const [selectedFile, setSelectedFile] = useState(null);
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        const form = e.target;
 
+        emailjs.sendForm('service_yqx6t8s', 'template_lsy4m4s', form, '_D8-Zzcad-BmexpHC')
+            .then((response) => {
+                console.log('Email sent successfully:', response);
+                alert('Email sent successfully:')
+            })
+            .catch((error) => {
+                console.error('Error sending email:', error);
+            });
+
+    };
     const handleFileChange = (event) => {
         const file = event.target.files[0];
         setSelectedFile(file);
@@ -25,8 +47,12 @@ const Index = () => {
     const [hasDomain, setHasDomain] = useState(false);
 
     const handleOptionChange = (event) => {
-        const { value } = event.target;
+        const { name, value } = event.target;
         setHasDomain(value === 'yes');
+        setFormData({
+            ...formData,
+            [name]: value,
+        });
     };
     const handleInputChange = (event) => {
         const { name, value } = event.target;
@@ -35,15 +61,13 @@ const Index = () => {
             [name]: value,
         });
     };
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        // You can add code here to send the formData to your backend or perform any other actions.
-        console.log(formData);
-    };
+
 
     return (
         <div className="form-container">
-            <h1 className="form-title"> Initail Requirement Form <br /> Graphic Design  </h1>
+            {window.location.href = "https://docs.google.com/forms/d/e/1FAIpQLSevN4Y4Q1Ec_noPnnxiFzb8jPO2ZjEd9e_f4bXnrJ51BmbcfQ/viewform?usp=sf_link"}
+
+            {/* <h1 className="form-title"> Initail Requirement Form <br /> Graphic Design  </h1>
             <form onSubmit={handleSubmit} className="formseo">
                 <div className='domian-div'>
                     <h3>Design Product</h3>
@@ -51,7 +75,7 @@ const Index = () => {
                         <div className='radio-btn-graphic'>
                             <input
                                 type="radio"
-                                name="domain"
+                                name="logo"
                                 value="yes"
                                 checked={hasDomain}
                                 onChange={handleOptionChange}
@@ -61,7 +85,7 @@ const Index = () => {
                         <div className='radio-btn-graphic'>
                             <input
                                 type="radio"
-                                name="domain"
+                                name="logo"
                                 value="no"
                                 checked={!hasDomain}
                                 onChange={handleOptionChange}
@@ -71,7 +95,7 @@ const Index = () => {
                         <div className='radio-btn-graphic'>
                             <input
                                 type="radio"
-                                name="domain"
+                                name="logo"
                                 value="no"
                                 checked={!hasDomain}
                                 onChange={handleOptionChange}
@@ -82,7 +106,7 @@ const Index = () => {
                         <div className='radio-btn-graphic'>
                             <input
                                 type="radio"
-                                name="domain"
+                                name="logo"
                                 value="no"
                                 checked={!hasDomain}
                                 onChange={handleOptionChange}
@@ -93,7 +117,7 @@ const Index = () => {
                         <div className='radio-btn-graphic'>
                             <input
                                 type="radio"
-                                name="domain"
+                                name="logo"
                                 value="no"
                                 checked={!hasDomain}
                                 onChange={handleOptionChange}
@@ -104,13 +128,23 @@ const Index = () => {
                         <div className='radio-btn-graphic'>
                             <input
                                 type="radio"
-                                name="domain"
+                                name="logo"
                                 value="no"
                                 checked={!hasDomain}
                                 onChange={handleOptionChange}
                             />
 
                             <span>Others</span>
+                            <input
+                                type="text"
+                                id="desiredOutcomes"
+                                name="other"
+                                value={formData.other}
+                                onChange={handleChange}
+                                placeholder='here....'
+                                className="form-input"
+
+                            />
                         </div>
 
 
@@ -123,32 +157,32 @@ const Index = () => {
                         <input
                             type="text"
                             id="desiredOutcomes"
-                            name="desiredOutcomes"
-                            value={formData.desiredOutcomes}
+                            name="font"
+                            value={formData.font}
                             onChange={handleChange}
                             placeholder='Fonts'
                             className="form-input"
-                            required
+
                         />
                         <input
                             type="text"
                             id="desiredOutcomes"
-                            name="desiredOutcomes"
+                            name="size"
                             placeholder='Sizes'
-                            value={formData.desiredOutcomes}
+                            value={formData.size}
                             onChange={handleChange}
                             className="form-input"
-                            required
+
                         />
                         <input
                             type="text"
                             id="desiredOutcomes"
-                            name="desiredOutcomes"
+                            name="style"
                             placeholder='Styles'
-                            value={formData.desiredOutcomes}
+                            value={formData.style}
                             onChange={handleChange}
                             className="form-input"
-                            required
+
                         />
                     </div>
 
@@ -160,11 +194,11 @@ const Index = () => {
                     <input
                         type="text"
                         id="desiredOutcomes"
-                        name="desiredOutcomes"
-                        value={formData.desiredOutcomes}
+                        name="targetaudience"
+                        value={formData.targetaudience}
                         onChange={handleChange}
                         className="form-input"
-                        required
+
                     />
 
                 </div>
@@ -173,12 +207,12 @@ const Index = () => {
                     <input
                         type="text"
                         id="desiredOutcomes"
-                        name="desiredOutcomes"
-                        value={formData.desiredOutcomes}
+                        name="Purpose"
+                        value={formData.Purpose}
                         onChange={handleChange}
                         className="form-input"
                         placeholder=' Message/Feeling to Convey'
-                        required
+
                     />
 
                 </div>
@@ -187,11 +221,11 @@ const Index = () => {
                     <input
                         type="text"
                         id="desiredOutcomes"
-                        name="desiredOutcomes"
-                        value={formData.desiredOutcomes}
+                        name="KeyInformationtoInclude"
+                        value={formData.KeyInformationtoInclude}
                         onChange={handleChange}
                         className="form-input"
-                        required
+
                     />
 
                 </div>
@@ -202,12 +236,12 @@ const Index = () => {
                     <input
                         type="text"
                         id="desiredOutcomes"
-                        name="desiredOutcomes"
-                        value={formData.desiredOutcomes}
+                        name="CalltoAction"
+                        value={formData.CalltoAction}
                         onChange={handleChange}
                         placeholder='(if applicable)'
                         className="form-input"
-                        required
+
                     />
                 </div>
                 <h2> Design Inspiration</h2>
@@ -224,12 +258,12 @@ const Index = () => {
                     <input
                         type="text"
                         id="desiredOutcomes"
-                        name="desiredOutcomes"
-                        value={formData.desiredOutcomes}
+                        name="DesignStylePreferences"
+                        value={formData.DesignStylePreferences}
                         onChange={handleChange}
                         className="form-input"
                         placeholder='(Minimalist, Vintage, Modern, etc.)'
-                        required
+
                     />
                 </div>
 
@@ -240,11 +274,11 @@ const Index = () => {
                     <input
                         type="text"
                         id="desiredOutcomes"
-                        name="desiredOutcomes"
-                        value={formData.desiredOutcomes}
+                        name="AnyOtherSpecificRequirements"
+                        value={formData.AnyOtherSpecificRequirements}
                         onChange={handleChange}
                         className="form-input"
-                        required
+
                     />
                 </div>
                 <h2> Delivery Information:</h2>
@@ -261,12 +295,12 @@ const Index = () => {
                     <input
                         type="text"
                         id="desiredOutcomes"
-                        name="desiredOutcomes"
-                        value={formData.desiredOutcomes}
+                        name="DeliveryMethod"
+                        value={formData.DeliveryMethod}
                         onChange={handleChange}
                         placeholder='(Email, Cloud Storage, etc.)'
                         className="form-input"
-                        required
+
                     />
                 </div>
                 <div className='form-div'>
@@ -275,79 +309,17 @@ const Index = () => {
                     <input
                         type="text"
                         id="desiredOutcomes"
-                        name="desiredOutcomes"
-                        value={formData.desiredOutcomes}
+                        name="DropBoxinserthere"
+                        value={formData.DropBoxinserthere}
                         onChange={handleChange}
                         className="form-input"
-                        required
                     />
                 </div>
-                {/* <div className='form-div'>
-
-                    <label className="form-label">Draft Text (or attach and submit file above):</label>
-                    <textarea
-                        id="Dycompanybriefly"
-                        name="Dycompanybriefly"
-                        value={formData.Dycompanybriefly}
-                        onChange={handleInputChange}
-
-                        className='textarea-graphic'
-                    // placeholder='Describe your company briefly'
-
-                    ></textarea>
-                </div>
-                <div className='form-div'>
-                    <label className="form-label"> Logos, Photos or Other Graphics:</label>
-
-                    <input type="file" onChange={handleFileChange} />
-                    {selectedFile && <p> {selectedFile.name}</p>}
-                </div>
-                <div className='form-div'>
-                    <label className="form-label">Color Palette & Theme:</label>
-                    <textarea
-                        id="Dycompanybriefly"
-                        name="Dycompanybriefly"
-                        value={formData.Dycompanybriefly}
-                        onChange={handleInputChange}
-                        className='textarea-graphic'
-                    // placeholder='Describe your company briefly'
-
-                    ></textarea>
-                </div> */}
-                {/* <div className='form-div'>
-
-                    <label className="form-label">Desired Outcomes:</label>
-                    <input
-                        type="text"
-                        id="desiredOutcomes"
-                        name="desiredOutcomes"
-                        value={formData.desiredOutcomes}
-                        onChange={handleChange}
-                        className="form-input"
-                        required
-                    />
-                </div>
-                <div className='form-div'>
-
-                    <label className="form-label">Additional Notes:</label>
-                    <input
-                        type="text"
-                        id="additionalNotes"
-                        name="additionalNotes"
-                        value={formData.additionalNotes}
-                        onChange={handleChange}
-                        className="form-input"
-                        required
-                    />
-                </div> */}
-
-                {/* ... Similar fields for other form inputs */}
-
                 <div className='seo-button'>
 
                     <button type="submit" className="submit-button">Submit</button>
                 </div>
-            </form>
+            </form> */}
         </div>
     );
 };

@@ -16,21 +16,26 @@ const OurServices = () => {
     const handleChange = (props) => {
         console.log("porps", props)
         if (props === "webdesign") {
-            navigate('/webpage');
+            navigate('/webpage', { state: "webdesign" });
         } else if (props === "seoform") {
-            navigate('/seoform');
+            // navigate('/seoform');
+            navigate('/webpage', { state: "seoform" });
         }
         else if (props === "graphicdesgin") {
-            navigate('/graphicdesgin');
+            // navigate('/graphicdesgin');
+            navigate('/webpage', { state: "graphicdesgin" });
         }
         else if (props === "applicationdev") {
-            navigate('/applicationdev');
+            // navigate('/applicationdev');
+            navigate('/webpage', { state: "applicationdev" });
         }
         else if (props === "domianhosting") {
-            navigate('/domianhosting');
+            // navigate('/domianhosting');
+            navigate('/webpage', { state: "domianhosting" });
         }
         else if (props === "maintenacesupport") {
-            navigate('/maintenacesupport');
+            // navigate('/maintenacesupport');
+            navigate('/webpage', { state: "maintenacesupport" });
         }
     }
     return (
