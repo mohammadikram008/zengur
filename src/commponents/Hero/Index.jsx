@@ -11,6 +11,8 @@ import chooseus from '../assets/Images/newimg.jpg'
 import laptops from '../assets/Images/loptops.jpg'
 import whatsappicon from '../assets/Images/whatsappicon.jpg'
 import { Link } from 'react-router-dom'
+import Aboutus from '../Aboutus/Index'
+import FAQ from '../FAQ/Index'
 // import '../css/HeroSection.css'
 
 const Index = () => {
@@ -84,11 +86,11 @@ const Index = () => {
                     <div className='hero-heading'>
                         <h1>Give your business a digital edge!<br />Let us help you reach  more cutomers online!! </h1>
                         <div className='button'>
-                            <Link className="elementor-button elementor-button-link elementor-size-sm" to="/webpage">
+                            <a className="elementor-button elementor-button-link elementor-size-sm" href="#contact-section">
                                 <span className="elementor-button-content-wrapper">
                                     <span className="elementor-button-text">Get in Touch</span>
                                 </span>
-                            </Link>
+                            </a>
                         </div>
                     </div>
                     <div className='hero-colimg'>
@@ -137,9 +139,19 @@ const Index = () => {
                     <Element name="about-section">
                         <OurServices />
                     </Element>
-                    <Element name="contact-section">
+                    <Element name="aboutus">
+                        <Aboutus />
+                    </Element>
+                    <Element name="faq">
+                        <FAQ />
+                    </Element>
+                    <Element name="contact-section" id="contact-section">
                         <Contactus />
                     </Element>
+
+
+
+
 
 
                     {/* <Footer /> */}

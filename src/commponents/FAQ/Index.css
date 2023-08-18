@@ -48,6 +48,11 @@
   background-color: white;
   color: #775151;
 }
+.faq-heading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .answer {
   max-height: 150px;
   margin-top: 10px;

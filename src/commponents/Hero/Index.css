@@ -100,6 +100,26 @@
   .hero-first-cols {
     flex-direction: column-reverse;
   }
+  .hero-colimg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 0px;
+  }
+  .hero-headings {
+    margin-top: 20px;
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+  }
+  .hero-colimgs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 0px;
+  }
   .hero-colimgs img {
     width: 300px;
   }

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import { FaUser, FaMapMarkerAlt, FaPhone, FaEnvelope } from 'react-icons/fa';
 import whatsappicon from '../assets/Images/whatsappicon.jpg'
 import './Index.css'
@@ -13,7 +13,9 @@ const Index = () => {
         window.open(url, '_blank');
     };
     return (
-        <div className="about-us">
+        // <div className="about-us">
+        <Fragment>
+            <div className='divider' ></div>
             <div className="about-content">
                 <h2 className="about-title">About Us</h2>
                 <p className="about-description">
@@ -38,7 +40,7 @@ const Index = () => {
 
             </div>
             <div className='divider' ></div>
-            <div className="contact-info">
+            {/* <div className="contact-info">
                 <h3 className="contact-title">Contact Us</h3>
                 <div className="contact-item">
                     <FaMapMarkerAlt className="contact-icon" />
@@ -66,10 +68,9 @@ const Index = () => {
                 <span>Responce time with in one day!</span>
             </div>
             <div className="whatsapp-button" onClick={openWhatsAppChat}>
-                {/* <a href="https://www.flaticon.com/free-icons/whatsapp" title="whatsapp icons">Whatsapp icons created by Hight Quality Icons - Flaticon</a> */}
                 <img src={whatsappicon} alt="WhatsApp Icon" />
-            </div>
-        </div>
+            </div> */}
+        </Fragment>
     )
 }
 

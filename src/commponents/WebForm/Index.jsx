@@ -3,15 +3,15 @@ import { Row, Col, Input } from 'reactstrap'
 import './Index.css'
 import TextField from "@mui/material/TextField";
 import { Divider } from '@mui/material';
+import {
+    addTask,
+    getTasks,
+    updateTask,
+    deleteTask,
+} from "../services/TaskServices";
 const Index = () => {
     const [formData, setFormData] = useState({
-        name: '',
-        email: '',
-        domain: '',
-        question: '',
-        description: '',
-        contactNumber: '',
-        selectedOption: '',
+
         brandname: '',
         websitetype: '',
         refrance: '',
@@ -21,22 +21,34 @@ const Index = () => {
         servicefeature2: '',
         servicefeature3: '',
         Dycompanybriefly: '',
-        domain: '',
         WebsitesUnderDomain: '',
         domianname: '',
-        hostservice: '',
-        representyourbrand: '',
-        contentwesite: '',
-        webimge: '',
+
         additionalreq: ''
-
-
-
-
-
-
     });
     const [hasDomain, setHasDomain] = useState(false);
+    const [needHosting, setNeedHosting] = useState(false);
+    const [needLogo, setNeedLogo] = useState(false);
+    const [needContent, setNeedContent] = useState(false);
+    const [needImages, setNeedImages] = useState(false);
+    // Handle radio button group changes
+    const handleDomainChange = (event) => {
+        setHasDomain(event.target.value === 'yes');
+    };
+
+    const handleHostingChange = (event) => {
+        setNeedHosting(event.target.value === 'yes');
+    };
+    const handleLogoChange = (event) => {
+        setNeedLogo(event.target.value === 'yes');
+    };
+    const handleContentChange = (event) => {
+        setNeedContent(event.target.value === 'yes');
+    };
+    const handleImageChange = (event) => {
+        setNeedImages(event.target.value === 'yes');
+    };
+    const [tasks, setTasks] = useState([]);
 
     const handleOptionChange = (event) => {
         const { value } = event.target;
@@ -53,9 +65,141 @@ const Index = () => {
     };
 
     // Handle form submission
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        alert("your data is submited you will be inform with in 24 hr thanks!")
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        const originalTasks = tasks;
+        console.log("domain", hasDomain)
+        console.log("hashosting", needHosting)
+        console.log("image", needImages)
+        console.log("logo", needLogo)
+        try {
+            const { data } = await addTask({
+
+                brandname: formData.brandname,
+                websitetype: formData.websitetype,
+                refrance: formData.refrance,
+                Branddescription: formData.Branddescription,
+                numberofpages: formData.numberofpages,
+                servicefeature1: formData.servicefeature1,
+                servicefeature2: formData.servicefeature2,
+                servicefeature3: formData.servicefeature3,
+                Dycompanybriefly: formData.Dycompanybriefly,
+                WebsitesUnderDomain: formData.WebsitesUnderDomain,
+                domianname: formData.domianname,
+
+                additionalreq: formData.additionalreq,
+                hasDomain: hasDomain,
+                needHosting: needHosting,
+                needLogo: needLogo,
+                needContent: needContent,
+                needImages: needImages,
+            }, "tasks");
+
+            if (data) {
+                const tasks = originalTasks;
+                tasks.push(data);
+                alert("your data is submited you will be inform with in 24 hr thanks!")
+                // setName("");
+                // setTasks("");
+                // setAssigne("");
+                // setDate("");
+                // setTime("");
+                // setDueDate("");
+                // setDueTime("");
+                // setId("");
+                // setOpen(true);
+                // setMessage({ text: "Updated successfully ", type: "success" });
+            } else {
+                alert("Error occure")
+                // setOpen(true);
+                // setMessage({ text: "Error", type: "danger" });
+            }
+            // if (id) {
+            //     // handleDelete(id);
+            //     const { data } = await addTask({
+            //         // _id: id,
+            //         name: name,
+            //         assignee: assigne,
+            //         date: date,
+            //         time: time,
+            //         duedate: Duedate,
+            //         duetime: Duetime,
+            //         name: formData.name,
+            //         email: formData.email,
+            //         domain: formData.domain,
+            //         question: formData.question,
+            //         description: formData.description,
+            //         contactNumber: formData.contactNumber,
+            //         selectedOption: formData.selectedOption,
+            //         brandname: formData.brandname,
+            //         websitetype: formData.websitetype,
+            //         refrance: formData.refrance,
+            //         Branddescription: formData.Branddescription,
+            //         numberofpages: formData.numberofpages,
+            //         servicefeature1: formData.servicefeature1,
+            //         servicefeature2: formData.servicefeature2,
+            //         servicefeature3: formData.servicefeature3,
+            //         Dycompanybriefly: formData.Dycompanybriefly,
+
+            //         WebsitesUnderDomain: formData.WebsitesUnderDomain,
+            //         domianname: formData.domianname,
+            //         hostservice: formData.hostservice,
+            //         representyourbrand: formData.representyourbrand,
+            //         contentwesite: formData.contentwesite,
+            //         webimge: formData.webimge,
+            //         additionalreq: formData.additionalreq
+            //     });
+
+            //     if (data) {
+            //         const tasks = originalTasks;
+            //         tasks.push(data);
+            //         setName("");
+            //         setTasks("");
+            //         setAssigne("");
+            //         setDate("");
+            //         setTime("");
+            //         setDueDate("");
+            //         setDueTime("");
+            //         setId("");
+            //         setOpen(true);
+            //         setMessage({ text: "Updated successfully ", type: "success" });
+            //     } else {
+            //         setOpen(true);
+            //         setMessage({ text: "Error", type: "danger" });
+            //     }
+            // } else {
+            //     const { data } = await addTask({
+            //         name: name,
+            //         assignee: assigne,
+            //         date: date,
+            //         time: time,
+            //         duedate: Duedate,
+            //         duetime: Duetime,
+            //     });
+            //     if (data) {
+            //         const tasks = originalTasks;
+            //         tasks.push(data);
+            //         setName("");
+            //         setTasks("");
+            //         setAssigne("");
+            //         setDate("");
+            //         setTime("");
+            //         setDueDate("");
+            //         setDueTime("");
+            //         setOpen(true);
+            //         setOpen(true);
+            //         setMessage({ text: "Save successfully ", type: "success" });
+            //     } else {
+            //         setOpen(true);
+            //         setMessage({ text: "Error", type: "danger" });
+            //     }
+            // }
+        } catch (error) {
+            console.log(error);
+            // setOpen(true);
+            // setMessage({ text: "Error", error });
+        }
+
         // You can perform form validation and submit data to the server here
         console.log(formData);
     };
@@ -65,12 +209,12 @@ const Index = () => {
             <div className='webform-bg'>
                 <Row className='m-0 '>
                     <Col>
-                        {window.location.href = "https://docs.google.com/forms/d/e/1FAIpQLSeCv_4GIPw0YDgfxyqHVZ_wrc-DzTQ805yMJZPadKc2XP36EA/viewform?usp=sf_link"}
+                        {/* {window.open("https://docs.google.com/forms/d/e/1FAIpQLSeCv_4GIPw0YDgfxyqHVZ_wrc-DzTQ805yMJZPadKc2XP36EA/viewform?usp=sf_link", "_blank")} */}
 
                         {/* <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSe9sScRWvI7Tu16ql6FBt7PS1npEyyHiMrgDczpPLkLxrGPFA/viewform?embedded=true" width="640" height="1709" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe> */}
 
 
-                        {/* <form className="contact-form" onSubmit={handleSubmit}>
+                        <form className="contact-form" onSubmit={handleSubmit}>
                             <h3>Tell us what you want.</h3>
 
                             <div className='divider' ></div>
@@ -192,7 +336,7 @@ const Index = () => {
                                             name="domain"
                                             value="yes"
                                             checked={hasDomain}
-                                            onChange={handleOptionChange}
+                                            onChange={handleDomainChange}
                                         />
                                         Yes
                                     </label>
@@ -202,7 +346,7 @@ const Index = () => {
                                             name="domain"
                                             value="no"
                                             checked={!hasDomain}
-                                            onChange={handleOptionChange}
+                                            onChange={handleDomainChange}
                                         />
                                         No
                                     </label>
@@ -239,20 +383,20 @@ const Index = () => {
                                     <label className='radio-btn'>
                                         <input
                                             type="radio"
-                                            name="domain"
+                                            name="hostservice"
                                             value="yes"
-                                            checked={hasDomain}
-                                            onChange={handleOptionChange}
+                                            checked={needHosting}
+                                            onChange={handleHostingChange}
                                         />
                                         Yes
                                     </label>
                                     <label className='radio-btn'>
                                         <input
                                             type="radio"
-                                            name="domain"
+                                            name="hostservice"
                                             value="no"
-                                            checked={!hasDomain}
-                                            onChange={handleOptionChange}
+                                            checked={!needHosting}
+                                            onChange={handleHostingChange}
                                         />
                                         No
                                     </label>
@@ -262,20 +406,20 @@ const Index = () => {
                                     <label className='radio-btn'>
                                         <input
                                             type="radio"
-                                            name="domain"
+                                            name="representyourbrand"
                                             value="yes"
-                                            checked={hasDomain}
-                                            onChange={handleOptionChange}
+                                            checked={needLogo}
+                                            onChange={handleLogoChange}
                                         />
                                         Yes
                                     </label>
                                     <label className='radio-btn'>
                                         <input
                                             type="radio"
-                                            name="domain"
+                                            name="representyourbrand"
                                             value="no"
-                                            checked={!hasDomain}
-                                            onChange={handleOptionChange}
+                                            checked={!needLogo}
+                                            onChange={handleLogoChange}
                                         />
                                         No
                                     </label>
@@ -285,20 +429,20 @@ const Index = () => {
                                     <label className='radio-btn'>
                                         <input
                                             type="radio"
-                                            name="domain"
+                                            name="contentwesite"
                                             value="yes"
-                                            checked={hasDomain}
-                                            onChange={handleOptionChange}
+                                            checked={needContent}
+                                            onChange={handleContentChange}
                                         />
                                         Yes
                                     </label>
                                     <label className='radio-btn'>
                                         <input
                                             type="radio"
-                                            name="domain"
+                                            name="contentwesite"
                                             value="no"
-                                            checked={!hasDomain}
-                                            onChange={handleOptionChange}
+                                            checked={!needContent}
+                                            onChange={handleContentChange}
                                         />
                                         No
                                     </label>
@@ -308,20 +452,20 @@ const Index = () => {
                                     <label className='radio-btn'>
                                         <input
                                             type="radio"
-                                            name="domain"
+                                            name="webimge"
                                             value="yes"
-                                            checked={hasDomain}
-                                            onChange={handleOptionChange}
+                                            checked={needImages}
+                                            onChange={handleImageChange}
                                         />
                                         Yes
                                     </label>
                                     <label className='radio-btn'>
                                         <input
                                             type="radio"
-                                            name="domain"
+                                            name="webimge"
                                             value="no"
-                                            checked={!hasDomain}
-                                            onChange={handleOptionChange}
+                                            checked={!needImages}
+                                            onChange={handleImageChange}
                                         />
                                         No
                                     </label>
@@ -342,7 +486,7 @@ const Index = () => {
                             <p>We will meet your expectations.</p>
 
                             <button type="submit" className='button'>Submit</button>
-                        </form> */}
+                        </form>
                     </Col>
                 </Row>
             </div>

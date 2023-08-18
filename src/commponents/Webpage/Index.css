@@ -39,6 +39,11 @@ select {
 #lastname {
   margin-left: 5px;
 }
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .button {
   border-radius: 10px;
   background-color: #0c7489;

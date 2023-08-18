@@ -40,9 +40,19 @@
   display: flex;
   margin-top: 10px;
 }
+/* .contact-itemes a {
+  text-decoration: none;
+  color: black;
+  margin-left: 10px;
+} */
 .contact-itemes a {
   text-decoration: none;
   color: black;
+}
+.contact_event_btn {
+  margin-left: 10px;
+}
+.contact-itemes span {
   margin-left: 10px;
 }
 
@@ -153,6 +163,9 @@
   }
   .card-contact {
     margin: 0px;
+  }
+  .contact-text {
+    margin-left: 20px;
   }
   .abt-pg {
     height: fit-content;

@@ -194,29 +194,41 @@ export default function Navbar() {
                                 </Link>
                             </ScrollLink>
                             {/* <span className="line">|</span> */}
-                            <Link
-                                to="/aboutus"
-                                underline="none"
-                                className={navbarOpen ? "toolbar-btn" : "nav-items"}
+                            <ScrollLink
+                                to="aboutus" // Replace 'home-section' with the ID of the section you want to scroll to
+                                spy={true}
+                                smooth={true}
+                                offset={-70} // Adjust the offset if you have a fixed navbar that overlaps the section
+                                duration={500}
+                                className="scroll-to-top"
                             >
-                                <Button
-                                    // className="nav-item"
-                                    variant="text"
-                                    onClick={handleChangeButton}
-                                    style={{
-                                        color: "black",
-                                        margin: "auto 23px",
-                                        fontSize: "1rem",
-                                        textTransform: "capitalize",
-                                        // fontFamily: `PublicSans,'sans-serif'`,
-                                    }}
+
+                                <Link
+
+                                    to="/#aboutus"
+                                    underline="none"
+                                    className={navbarOpen ? "toolbar-btn" : "nav-items"}
                                 >
-                                    About Us
-                                </Button>
-                            </Link>
+
+                                    <Button
+                                        // className="nav-item"
+                                        variant="text"
+                                        onClick={handleChangeButton}
+                                        style={{
+                                            color: "black",
+                                            margin: "auto 23px",
+                                            fontSize: "1rem",
+                                            textTransform: "capitalize",
+                                            // fontFamily: `PublicSans,'sans-serif'`,
+                                        }}
+                                    >
+                                        About Us
+                                    </Button>
+                                </Link>
+                            </ScrollLink>
                             {/* <span className="line">|</span> */}
                             <ScrollLink
-                                to="contact-section" // Replace 'home-section' with the ID of the section you want to scroll to
+                                to="faq" // Replace 'home-section' with the ID of the section you want to scroll to
                                 spy={true}
                                 smooth={true}
                                 offset={-70} // Adjust the offset if you have a fixed navbar that overlaps the section
@@ -248,27 +260,39 @@ export default function Navbar() {
                                 </Link>
                             </ScrollLink>
                             {/* <span className="line">|</span> */}
-                            <Link
-                                to="/faq"
-                                underline="none"
-                                className={navbarOpen ? "toolbar-btn" : "nav-items"}
+                            <ScrollLink
+                                to="faq" // Replace 'home-section' with the ID of the section you want to scroll to
+                                spy={true}
+                                smooth={true}
+                                offset={-70} // Adjust the offset if you have a fixed navbar that overlaps the section
+                                duration={500}
+                                className="scroll-to-top"
                             >
-                                <Button
-                                    // className="nav-item"
-                                    color="inherit"
-                                    onClick={handleChangeButton}
-                                    variant="text"
-                                    style={{
-                                        color: "black",
-                                        margin: "auto 23px",
-                                        textTransform: "capitalize",
-                                        fontSize: "1rem",
-                                        // fontFamily: `PublicSans,'sans-serif'`,
-                                    }}
+
+                                <Link
+
+                                    to="/#faq"
+                                    underline="none"
+                                    className={navbarOpen ? "toolbar-btn" : "nav-items"}
                                 >
-                                    FAQ
-                                </Button>
-                            </Link>
+
+                                    <Button
+                                        // className="nav-item"
+                                        color="inherit"
+                                        onClick={handleChangeButton}
+                                        variant="text"
+                                        style={{
+                                            color: "black",
+                                            margin: "auto 23px",
+                                            textTransform: "capitalize",
+                                            fontSize: "1rem",
+                                            // fontFamily: `PublicSans,'sans-serif'`,
+                                        }}
+                                    >
+                                        FAQ
+                                    </Button>
+                                </Link>
+                            </ScrollLink>
 
                         </Toolbar>
                     )}

@@ -42,7 +42,10 @@ const Index = () => {
     ];
     return (
         <div className="faq-section">
-            <h2 className="faq-title">FAQ</h2>
+            <div className='faq-heading'>
+
+                <h2 className="faq-title">FAQ</h2>
+            </div>
             <div className="faq-list">
                 {faqData.map((item, index) => (
                     <div key={index} className="faq-item">

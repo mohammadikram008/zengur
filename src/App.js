@@ -22,8 +22,8 @@ function App() {
         <Route path='/' element={<Hero />}></Route>
         <Route path='/webpage' element={<Webpage />}></Route>
         <Route path='/webform' element={<WebForm />}></Route>
-        <Route path='/faq' element={<FAQ />}></Route>
-        <Route path='/aboutus' element={<Aboutus />}></Route>
+        {/* <Route path='/faq' element={<FAQ />}></Route> */}
+        {/* <Route path='/aboutus' element={<Aboutus />}></Route> */}
         <Route path='/seoform' element={<SeoForm />}></Route>
         <Route path='/applicationdev' element={<Applicationdev />}></Route>
         <Route path='/graphicdesgin' element={<GraphicDesign />}></Route>

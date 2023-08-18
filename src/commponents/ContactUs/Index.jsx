@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, useState, useRef, useEffect } from 'react'
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import FacebookOutlinedIcon from '@mui/icons-material/FacebookOutlined';
@@ -26,15 +26,47 @@ import {
 import MessageIcon from "@mui/icons-material/Message";
 import SendIcon from "@mui/icons-material/Send";
 import "./Index.css";
+import emailjs from "@emailjs/browser";
 import { pink } from "@mui/material/colors";
 import Navbar from '../Navbar/Index';
-const index = () => {
+const Index = () => {
+    const form = useRef();
+    const [formData, setFormData] = useState({
+        name: '',
+        email: '',
+        message: '',
+    });
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        const form = e.target;
+
+        emailjs.sendForm('service_nr4xwne', 'template_d1wie65', form, 'PVWGOu1RVCawNzxBv')
+            .then((response) => {
+
+
+
+                console.log('Email sent successfully:', response);
+                alert("Email sent successfully")
+                setFormData({ message: "", email: "", name: "" })
+
+
+            })
+            .catch((error) => {
+                console.error('Error sending email:', error);
+            });
+
+    };
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormData((prevData) => ({ ...prevData, [name]: value }));
+    };
     return (
         <div className="abt-pg">
 
             <div className='contacts' id='contact'>
 
                 <form
+                    onSubmit={handleSubmit}
                     action=""
                     method="post"
                     className="form"
@@ -73,6 +105,38 @@ const index = () => {
                     >
                         <Input
                             className='input-contact'
+                            onChange={handleChange}
+                            name="name"
+                            sx={{
+                                margin: "10px 0px",
+                                fontSize: "16px",
+                                color: "black",
+                                padding: "2px 5px",
+                            }}
+                            type="text"
+                            startAdornment={
+                                <EmailIcon
+
+                                />
+                            }
+                            placeholder="Your Name..."
+                            required
+                        />
+                    </FormControl>
+                    <FormControl
+                        color="primary"
+                        className='input-contact'
+                        variant="standard"
+                        sx={{
+                            margin: "6px 0px",
+                            padding: "2px 4px",
+                        }}
+                        focused
+                    >
+                        <Input
+                            className='input-contact'
+                            onChange={handleChange}
+                            name="email"
                             sx={{
                                 margin: "10px 0px",
                                 fontSize: "16px",
@@ -92,6 +156,7 @@ const index = () => {
                     <FormControl
                         color="primary"
                         variant="standard"
+
                         className='input-contact'
                         sx={{
                             // width: "50%",
@@ -103,6 +168,8 @@ const index = () => {
                     >
                         <Input
                             className='input-contact'
+                            onChange={handleChange}
+                            name="message"
                             sx={{
                                 margin: "10px 0px",
                                 // width: "50%",
@@ -177,7 +244,7 @@ const index = () => {
                             <span className="contact-text">12 Baltimore St,<br />St.John’s , NL, <br />Canada(A1B 3P9 )</span>
                         </div>
                         <div className="contact-itemes">
-                            <WhatsAppIcon />
+                            <a className="" href="https://api.whatsapp.com/send?phone=+1(709)693-9434&amp;text=Hi%2C%20I%E2%80%99m%20interested%20in%20zengur%20kindly%20send%20me%20more%20information%20about%20the%20project%2C%20pricing%20and%20availability.%20Thank%20you!">  <WhatsAppIcon /></a>
                             <a className="contact_event_btn" href="https://api.whatsapp.com/send?phone=+1(709)693-9434&amp;text=Hi%2C%20I%E2%80%99m%20interested%20in%20zengur%20kindly%20send%20me%20more%20information%20about%20the%20project%2C%20pricing%20and%20availability.%20Thank%20you!"> +1(709)693-9434</a>
 
 
@@ -189,7 +256,7 @@ const index = () => {
                             <span className="contact-text">12 floor office no 1201,<br />Green trust tower,F6/1<br /> Islamabad Pakistan</span>
                         </div>
                         <div className="contact-itemes">
-                            <WhatsAppIcon />
+                            <a className="" href="https://api.whatsapp.com/send?phone=+923357944011&amp;text=Hi%2C%20I%E2%80%99m%20interested%20in%20zengur%20kindly%20send%20me%20more%20information%20about%20the%20project%2C%20pricing%20and%20availability.%20Thank%20you!"><WhatsAppIcon /></a>
                             <a className="contact_event_btn" href="https://api.whatsapp.com/send?phone=+923357944011&amp;text=Hi%2C%20I%E2%80%99m%20interested%20in%20zengur%20kindly%20send%20me%20more%20information%20about%20the%20project%2C%20pricing%20and%20availability.%20Thank%20you!">+92 3357944011</a>
 
                         </div>
@@ -234,4 +301,4 @@ const index = () => {
     )
 }
 
-export default index
+export default Index
