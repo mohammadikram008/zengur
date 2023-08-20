@@ -1,6 +1,11 @@
 import React, { Fragment } from 'react'
 import { Row, Col } from 'reactstrap'
 import g1 from '.././assets/designstan-background.png'
+import img1 from '.././assets/Images/developer.png'
+import img2 from '.././assets/Images/code.png'
+import img3 from '.././assets/Images/development.png'
+import img4 from '.././assets/Images/headphone.png'
+import img5 from '.././assets/Images/art-and-design.png'
 import './Index.css'
 import OurServices from '../OurServices/Index'
 import Footer from '../Footer/Index'
@@ -14,9 +19,57 @@ import { Link } from 'react-router-dom'
 import Aboutus from '../Aboutus/Index'
 import FAQ from '../FAQ/Index'
 // import '../css/HeroSection.css'
-
+import Portfolio from '../Portfolio/Index'
 const Index = () => {
 
+    const portfolioItems = [
+        {
+            imageUrl: `${img1}`,
+            // title: 'Project 1',
+            // description: 'Description of Project 1',
+        },
+        {
+            imageUrl: `${img2}`,
+            // title: 'Project 2',
+            // description: 'Description of Project 2',
+        },
+        {
+            imageUrl: `${img3}`,
+            // title: 'Project 3',
+            // description: 'Description of Project 2',
+        },
+        {
+            imageUrl: `${img4}`,
+            // title: 'Project 4',
+            // description: 'Description of Project 2',
+        },
+        {
+            imageUrl: `${img5}`,
+            // title: 'Project 5',
+            // description: 'Description of Project 2',
+        },
+        {
+            imageUrl: `${img1}`,
+            // title: 'Project 1',
+            // description: 'Description of Project 1',
+        },
+        {
+            imageUrl: `${img2}`,
+            // title: 'Project 2',
+            // description: 'Description of Project 2',
+        },
+        {
+            imageUrl: `${img3}`,
+            // title: 'Project 3',
+            // description: 'Description of Project 2',
+        },
+        {
+            imageUrl: `${img4}`,
+            // title: 'Project 4',
+            // description: 'Description of Project 2',
+        },
+        // Add more items as needed
+    ];
     // // State for Active index
     // const [activeIndex, setActiveIndex] = React.useState(0);
 
@@ -81,10 +134,10 @@ const Index = () => {
     return (
         <Fragment>
 
-            <Row className='m-0'>
+            <Row className='m-0 mian-page'>
                 <Col md="6" className=' hero-first-col'>
                     <div className='hero-heading'>
-                        <h1>Give your business a digital edge!<br />Let us help you reach  more cutomers online!! </h1>
+                        <h1>Give your business a digital edge!<br />Let us help you reach  more cutomers online! </h1>
                         <div className='button'>
                             <a className="elementor-button elementor-button-link elementor-size-sm" href="#contact-section">
                                 <span className="elementor-button-content-wrapper">
@@ -135,29 +188,27 @@ const Index = () => {
 
 
                 </Col>
+
                 <Col md="6" className='other-body'>
+
                     <Element name="about-section">
                         <OurServices />
                     </Element>
-                    <Element name="aboutus">
+                    {/* <Element name="aboutus">
                         <Aboutus />
-                    </Element>
+                    </Element> */}
+                    <div className="app">
+                        <h1>Company Portfolio</h1>
+                        <Portfolio items={portfolioItems} />
+                    </div>
                     <Element name="faq">
                         <FAQ />
                     </Element>
                     <Element name="contact-section" id="contact-section">
                         <Contactus />
                     </Element>
-
-
-
-
-
-
-                    {/* <Footer /> */}
                 </Col>
                 <div className="whatsapp-button" onClick={openWhatsAppChat}>
-                    {/* <a href="https://www.flaticon.com/free-icons/whatsapp" title="whatsapp icons">Whatsapp icons created by Hight Quality Icons - Flaticon</a> */}
                     <img src={whatsappicon} alt="WhatsApp Icon" />
                 </div>
             </Row>

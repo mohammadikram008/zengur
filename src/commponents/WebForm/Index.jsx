@@ -1,15 +1,44 @@
-import React, { Fragment, useState } from 'react'
+import React, { Fragment, useState, useEffect } from 'react'
 import { Row, Col, Input } from 'reactstrap'
 import './Index.css'
 import TextField from "@mui/material/TextField";
 import { Divider } from '@mui/material';
+
+
+import arrow from '../assets/right-arrow.png';
+import app from '../assets/Images/developer.png'
+import msword from '../assets/Images/word.png'
+import website from '../assets/website.jpg'
+import web from '../assets/Images/code.png'
+import person from '../assets/Images/personwithcomp.jpg'
+import chooseus from '../assets/Images/newimg.jpg'
+import art from '../assets/Images/art-and-design.png'
+import documents from '../assets/Images/documentation.png'
+import domainhost from '../assets/Images/development.png'
+import support from '../assets/Images/headphone.png'
+import {
+    AppBar,
+    Toolbar,
+    Box,
+    Typography,
+    useMediaQuery,
+    Button,
+
+} from "@mui/material";
 import {
     addTask,
     getTasks,
     updateTask,
     deleteTask,
 } from "../services/TaskServices";
+import { Link } from 'react-router-dom';
 const Index = () => {
+    const counters = [
+        { percentage: 90, color: '#ff6347', text: "Speed" }, // Red color
+        { percentage: 80, color: '#00cc99', text: "Achieved" }, // Green color
+        { percentage: 100, color: '#3498db', text: "Resposive" } // Blue color
+    ];
+
     const [formData, setFormData] = useState({
 
         brandname: '',
@@ -203,17 +232,33 @@ const Index = () => {
         // You can perform form validation and submit data to the server here
         console.log(formData);
     };
+
+
+
+
+
+    const handleCheckboxChange = (event) => {
+        const { name, checked } = event.target;
+        const updatedServices = checked
+            ? [...formData.services, name]
+            : formData.services.filter((service) => service !== name);
+        setFormData({
+            ...formData,
+            services: updatedServices,
+        });
+    };
+
+
     return (
         <Fragment>
+            {/* {window.open("https://docs.google.com/forms/d/e/1FAIpQLSeCv_4GIPw0YDgfxyqHVZ_wrc-DzTQ805yMJZPadKc2XP36EA/viewform?usp=sf_link", "_blank")} */}
+
+            {/* <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSe9sScRWvI7Tu16ql6FBt7PS1npEyyHiMrgDczpPLkLxrGPFA/viewform?embedded=true" width="640" height="1709" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe> */}
+
 
             <div className='webform-bg'>
                 <Row className='m-0 '>
                     <Col>
-                        {/* {window.open("https://docs.google.com/forms/d/e/1FAIpQLSeCv_4GIPw0YDgfxyqHVZ_wrc-DzTQ805yMJZPadKc2XP36EA/viewform?usp=sf_link", "_blank")} */}
-
-                        {/* <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSe9sScRWvI7Tu16ql6FBt7PS1npEyyHiMrgDczpPLkLxrGPFA/viewform?embedded=true" width="640" height="1709" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe> */}
-
-
                         <form className="contact-form" onSubmit={handleSubmit}>
                             <h3>Tell us what you want.</h3>
 
@@ -488,8 +533,11 @@ const Index = () => {
                             <button type="submit" className='button'>Submit</button>
                         </form>
                     </Col>
+                    <Link to='/services'>Do you Want more Services?</Link>
                 </Row>
             </div>
+
+
         </Fragment>
     )
 }

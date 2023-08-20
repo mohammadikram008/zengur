@@ -100,3 +100,223 @@ button:hover {
     max-width: 90%;
   }
 }
+
+/* new page */
+.web-main {
+  margin-top: -50px;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  flex-direction: column;
+  background-color: rgb(39, 102, 240);
+}
+.web-offer {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  flex-direction: column;
+  background-color: rgb(39, 102, 240);
+}
+.web-heading {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  flex-direction: column;
+  font-weight: 900;
+  font-size: 22px;
+}
+.web-heading-offer {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  flex-direction: column;
+  margin-top: 100px;
+  font-weight: 900;
+  font-size: 22px;
+}
+.web-hero {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  flex-direction: column;
+  width: 50%;
+  height: 500px;
+}
+.web-hero h1,
+p {
+  color: white;
+}
+.web-hero p {
+  color: white;
+  margin-top: 30px;
+}
+.web-heading Button {
+  border-radius: 40px;
+  color: white;
+  background-color: #2e2cd4;
+  width: 100%;
+  margin-top: 30px;
+  padding: 20px;
+  box-shadow: #0056b3;
+}
+.hero-headingour,
+.hero-headings {
+  width: 800px;
+  margin-top: 40px;
+}
+.hero-headingour h1 {
+  color: #3166ab;
+}
+.hero-headings h1 {
+  color: #3166ab;
+}
+.hero-headings p {
+  color: black;
+}
+
+.hero-headingour p {
+  color: black;
+}
+.percentage-counter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.circle {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 40px;
+  position: relative;
+  transition: transform 1s;
+}
+
+.circle-inner {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  position: relative;
+  border: 6px solid transparent;
+  transform: rotate(135deg);
+  animation: fill-rotate 2s linear infinite;
+}
+
+.circle-fill {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 8px solid transparent;
+  border-top-color: currentColor;
+  border-right-color: currentColor;
+  border-radius: 50%;
+  clip: rect(0px, 200px, 400px, 0px);
+}
+
+.percentage-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: 18px;
+  font-weight: bold;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes fill-rotate {
+  to {
+    transform: rotate(135deg);
+  }
+}
+
+.services-content p {
+  color: black;
+  margin-top: 20px;
+  width: 500px;
+}
+.services-content h1 {
+  color: #3166ab;
+  margin-top: 30px;
+}
+.services-heading {
+  font-weight: 800;
+  font-size: 22px;
+  font-style: bold;
+  color: #3166ab;
+  text-decoration: none;
+  margin-top: 50px;
+}
+.services-card,
+.services-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* form website */
+.form-containers {
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* height: 100vh; */
+  background: linear-gradient(to bottom right, #2800d9, #3190e4);
+}
+
+/* .form {
+  padding: 20px;
+  border-radius: 8px;
+  background: transparent;
+  width: 100%;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+.form h2 {
+  color: white;
+} */
+.input-group {
+  display: flex;
+  width: 80%;
+  /* flex-wrap: wrap; */
+  margin-bottom: 20px;
+}
+
+.input-group input {
+  width: calc(33.33% - 10px);
+  padding: 10px;
+  margin: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.checkbox-group {
+  margin-bottom: 20px;
+  display: flex;
+  width: 80%;
+}
+.serviceyouneeds{
+  color: black;
+}
+.checkbox-label {
+  display: flex;
+  color: black;
+  margin-bottom: 5px;
+}
+
+button {
+  background: #0074d9;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 20%;
+}

@@ -16,14 +16,15 @@ const OurServices = () => {
     const handleChange = (props) => {
         console.log("porps", props)
         if (props === "webdesign") {
-            navigate('/webpage', { state: "webdesign" });
+            navigate('/weblandingpage');
+            // navigate('/webpage', { state: "webdesign" });
         } else if (props === "seoform") {
-            // navigate('/seoform');
-            navigate('/webpage', { state: "seoform" });
+            navigate('/seopage');
+            // navigate('/webpage', { state: "seoform" });
         }
         else if (props === "graphicdesgin") {
-            // navigate('/graphicdesgin');
-            navigate('/webpage', { state: "graphicdesgin" });
+            navigate('/graphicdesigingpage');
+            // navigate('/webpage', { state: "graphicdesgin" });
         }
         else if (props === "applicationdev") {
             // navigate('/applicationdev');
@@ -48,7 +49,7 @@ const OurServices = () => {
                     <div className='services-card' onClick={(e) => handleChange("graphicdesgin")}>
                         <div className='services-img'><img src={art}></img></div>
                         <div className='services-content'>
-                            <h1>Graphic Design & Brading </h1>
+                            <h1>Graphic Design & Branding </h1>
                             {/* Ignite your brand's success with our powerful Graphic Design and Branding services. Our expert designers craft visuals that captivate and drive impact, creating a cohesive brand identity that resonates. Elevate your brand today for lasting impressions. Contact us now and unlock the true potential of compelling design and branding.</p>  */}
 
                             <p> Branding & Design services are people’s view and the perception that makes your business visible as well as reliable. Like: Logo, Business Stationery Design,Contact us now and unlock the true potential of compelling design and branding.</p>
@@ -79,8 +80,10 @@ const OurServices = () => {
                     </div>
                 </div></Col>
             </Row>
-            <Row className='m-0 main-row'>
-                <Col md='4' sm='12' xs='12'><div className='services-card' onClick={(e) => handleChange("applicationdev")}>
+            {/* <Row className='m-0 main-row'>
+                <Col md='4' sm='12' xs='12'><div className='services-card'
+                // onClick={(e) => handleChange("applicationdev")}
+                >
                     <div className='services-img'><img src={app}></img></div>
                     <div className='services-content'>
                         <h1>Application Development</h1>
@@ -91,7 +94,9 @@ const OurServices = () => {
                         <img src={arrow} className='arrow' />
                     </div>
                 </div></Col>
-                <Col md='4'><div className='services-card' onClick={(e) => handleChange("domianhosting")}>
+                <Col md='4'><div className='services-card'
+                // onClick={(e) => handleChange("domianhosting")}
+                >
                     <div className='services-img'><img src={domainhost}></img></div>
                     <div className='services-content'>
                         <h1>Domain & Hosting Services</h1>
@@ -100,7 +105,9 @@ const OurServices = () => {
                         <img src={arrow} className='arrow' />
                     </div>
                 </div></Col>
-                <Col md='4'><div className='services-card' onClick={(e) => handleChange("maintenacesupport")}>
+                <Col md='4'><div className='services-card'
+                // onClick={(e) => handleChange("maintenacesupport")}
+                >
                     <div className='services-img'><img src={support}></img></div>
                     <div className='services-content'>
                         <h1>Maintenance & Support</h1>
@@ -109,7 +116,7 @@ const OurServices = () => {
                         <img src={arrow} className='arrow' />
                     </div>
                 </div></Col>
-            </Row>
+            </Row> */}
 
         </Fragment>
     )

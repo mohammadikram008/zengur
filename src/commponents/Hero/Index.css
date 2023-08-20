@@ -1,3 +1,6 @@
+.mian-page {
+  margin: 0px;
+}
 .hero-first-col,
 .hero-first-cols {
   display: flex;
@@ -106,9 +109,12 @@
     align-items: center;
     margin-left: 0px;
   }
+  .hero-headingour {
+    margin-top: 40px;
+  }
   .hero-headings {
-    margin-top: 20px;
-    width: 300px;
+    margin-top: 40px;
+    width: 390px;
     display: flex;
     justify-content: center;
     align-items: start;
@@ -130,4 +136,11 @@
     position: fixed;
     right: 40px;
   }
+}
+.css-13almjc-MuiButtonBase-root-MuiButton-root {
+  width: 50px;
+}
+.app {
+  text-align: center;
+  padding: 50px;
 }

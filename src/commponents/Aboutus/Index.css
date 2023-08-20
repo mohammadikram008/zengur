@@ -7,6 +7,12 @@
 .about-content {
   padding: 30px;
 }
+.contact-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
 .about-title {
   display: flex;
   justify-content: center;
@@ -20,6 +26,7 @@
 .about-description {
   font-size: 18px;
   margin-top: 20px;
+  color: black;
 }
 
 .about-team-title {

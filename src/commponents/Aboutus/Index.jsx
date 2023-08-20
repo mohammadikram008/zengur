@@ -15,10 +15,10 @@ const Index = () => {
     return (
         // <div className="about-us">
         <Fragment>
-            <div className='divider' ></div>
-            <div className="about-content">
+            {/* <div className='divider' ></div> */}
+            <div className="about-content ">
                 <h2 className="about-title">About Us</h2>
-                <p className="about-description">
+                <p className="about-description ">
                     At Zengur, we are more than just a web development and design agency – we are your trusted partner in leveraging the digital landscape to elevate your business. With a passion for innovation and a commitment to excellence, we specialize in delivering tailored solutions for a wide spectrum of industries, including e-commerce, real estate, accounting firms, education, and blockchain technology.
                 </p>
 
@@ -40,7 +40,7 @@ const Index = () => {
 
             </div>
             <div className='divider' ></div>
-            {/* <div className="contact-info">
+            <div className="contact-info">
                 <h3 className="contact-title">Contact Us</h3>
                 <div className="contact-item">
                     <FaMapMarkerAlt className="contact-icon" />
@@ -69,7 +69,7 @@ const Index = () => {
             </div>
             <div className="whatsapp-button" onClick={openWhatsAppChat}>
                 <img src={whatsappicon} alt="WhatsApp Icon" />
-            </div> */}
+            </div>
         </Fragment>
     )
 }

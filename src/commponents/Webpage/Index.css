@@ -7,6 +7,10 @@
   background: url("../../commponents/assets/Images/webpagebg.jpg") no-repeat
     center center/cover;
 }
+.webform-row {
+  margin: 0px;
+  display: flex;
+}
 .contact-form {
   max-width: 450px;
   /* margin: 0 auto; */

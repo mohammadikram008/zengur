@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { Fragment, useState } from 'react'
 import './Index.css'
 import emailjs from "@emailjs/browser";
 import {
@@ -8,6 +8,8 @@ import {
     updateTask,
     deleteTask,
 } from "../services/TaskServices";
+import GraphicPage from './GraphicPage';
+import { Link } from 'react-router-dom';
 const Index = () => {
     const [formData, setFormData] = useState({
         log: '',
@@ -110,84 +112,126 @@ const Index = () => {
 
 
     return (
-        <div className="form-container">
+        <Fragment>
+            {/* <GraphicPage /> */}
+
             {/* {window.open("https://docs.google.com/forms/d/e/1FAIpQLSevN4Y4Q1Ec_noPnnxiFzb8jPO2ZjEd9e_f4bXnrJ51BmbcfQ/viewform?usp=sf_link","_blank")} */}
+            <div className="form-container">
 
-            <h1 className="form-title"> Initail Requirement Form <br /> Graphic Design  </h1>
-            <form onSubmit={handleSubmit} className="formseo">
-                <div className='domian-div'>
-                    <h3>Design Product</h3>
-                    <div className='radio-graphic'>
-                        <div className='radio-btn-graphic'>
-                            <input
-                                type="radio"
-                                name="logo"
-                                value="yes"
-                                checked={hasDomain}
-                                onChange={handleOptionChange}
-                            />
-                            <span >Logo</span>
-                        </div>
-                        <div className='radio-btn-graphic'>
-                            <input
-                                type="radio"
-                                name="logo"
-                                value="no"
-                                checked={!hasDomain}
-                                onChange={handleOptionChange}
-                            />
-                            <span >Poster</span>
-                        </div>
-                        <div className='radio-btn-graphic'>
-                            <input
-                                type="radio"
-                                name="logo"
-                                value="no"
-                                checked={!hasDomain}
-                                onChange={handleOptionChange}
-                            />
+                <h1 className="form-title"> Initail Requirement Form <br /> Graphic Design  </h1>
+                <form onSubmit={handleSubmit} className="formseo">
+                    <div className='domian-div'>
+                        <h3>Design Product</h3>
+                        <div className='radio-graphic'>
+                            <div className='radio-btn-graphic'>
+                                <input
+                                    type="radio"
+                                    name="logo"
+                                    value="yes"
+                                    checked={hasDomain}
+                                    onChange={handleOptionChange}
+                                />
+                                <span >Logo</span>
+                            </div>
+                            <div className='radio-btn-graphic'>
+                                <input
+                                    type="radio"
+                                    name="logo"
+                                    value="no"
+                                    checked={!hasDomain}
+                                    onChange={handleOptionChange}
+                                />
+                                <span >Poster</span>
+                            </div>
+                            <div className='radio-btn-graphic'>
+                                <input
+                                    type="radio"
+                                    name="logo"
+                                    value="no"
+                                    checked={!hasDomain}
+                                    onChange={handleOptionChange}
+                                />
 
-                            <span >Brochure</span>
-                        </div>
-                        <div className='radio-btn-graphic'>
-                            <input
-                                type="radio"
-                                name="logo"
-                                value="no"
-                                checked={!hasDomain}
-                                onChange={handleOptionChange}
-                            />
+                                <span >Brochure</span>
+                            </div>
+                            <div className='radio-btn-graphic'>
+                                <input
+                                    type="radio"
+                                    name="logo"
+                                    value="no"
+                                    checked={!hasDomain}
+                                    onChange={handleOptionChange}
+                                />
 
-                            <span >Catalogue</span>
-                        </div>
-                        <div className='radio-btn-graphic'>
-                            <input
-                                type="radio"
-                                name="logo"
-                                value="no"
-                                checked={!hasDomain}
-                                onChange={handleOptionChange}
-                            />
+                                <span >Catalogue</span>
+                            </div>
+                            <div className='radio-btn-graphic'>
+                                <input
+                                    type="radio"
+                                    name="logo"
+                                    value="no"
+                                    checked={!hasDomain}
+                                    onChange={handleOptionChange}
+                                />
 
-                            <span>Social Media Posts</span>
-                        </div>
-                        <div className='radio-btn-graphic'>
-                            <input
-                                type="radio"
-                                name="logo"
-                                value="no"
-                                checked={!hasDomain}
-                                onChange={handleOptionChange}
-                            />
+                                <span>Social Media Posts</span>
+                            </div>
+                            <div className='radio-btn-graphic'>
+                                <input
+                                    type="radio"
+                                    name="logo"
+                                    value="no"
+                                    checked={!hasDomain}
+                                    onChange={handleOptionChange}
+                                />
 
-                            <span>Others</span>
+                                <span>Others</span>
+                                <input
+                                    type="text"
+                                    id="desiredOutcomes"
+                                    name="other"
+                                    value={formData.other}
+                                    onChange={handleChange}
+                                    placeholder='here....'
+                                    className="form-input"
+
+                                />
+                            </div>
+
+
+                        </div>
+                    </div>
+                    <div className='form-div'>
+
+                        <label className="form-label">Dimensions:</label>
+                        <div className="dimension">
                             <input
                                 type="text"
                                 id="desiredOutcomes"
-                                name="other"
-                                value={formData.other}
+                                name="font"
+                                value={formData.font}
                                 onChange={handleChange}
-                                placeholder='here....'
+                                placeholder='Fonts'
+                                className="form-input"
+
+                            />
+                            <input
+                                type="text"
+                                id="desiredOutcomes"
+                                name="size"
+                                placeholder='Sizes'
+                                value={formData.size}
+                                onChange={handleChange}
+                                className="form-input"
+
+                            />
+                            <input
+                                type="text"
+                                id="desiredOutcomes"
+                                name="style"
+                                placeholder='Styles'
+                                value={formData.style}
+                                onChange={handleChange}
                                 className="form-input"
 
                             />
@@ -195,178 +239,141 @@ const Index = () => {
 
 
                     </div>
-                </div>
-                <div className='form-div'>
-
-                    <label className="form-label">Dimensions:</label>
-                    <div className="dimension">
+                    <h2>Project Objectives:</h2>
+                    <div className='form-div'>
+                        <label className="form-label">Target Audience:</label>
                         <input
                             type="text"
                             id="desiredOutcomes"
-                            name="font"
-                            value={formData.font}
-                            onChange={handleChange}
-                            placeholder='Fonts'
-                            className="form-input"
-
-                        />
-                        <input
-                            type="text"
-                            id="desiredOutcomes"
-                            name="size"
-                            placeholder='Sizes'
-                            value={formData.size}
+                            name="targetaudience"
+                            value={formData.targetaudience}
                             onChange={handleChange}
                             className="form-input"
 
                         />
+
+                    </div>
+                    <div className='form-div'>
+                        <label className="form-label"> Purpose:</label>
                         <input
                             type="text"
                             id="desiredOutcomes"
-                            name="style"
-                            placeholder='Styles'
-                            value={formData.style}
+                            name="Purpose"
+                            value={formData.Purpose}
                             onChange={handleChange}
                             className="form-input"
+                            placeholder=' Message/Feeling to Convey'
+
+                        />
+
+                    </div>
+                    <div className='form-div'>
+                        <label className="form-label">  Key Information to Include:</label>
+                        <input
+                            type="text"
+                            id="desiredOutcomes"
+                            name="KeyInformationtoInclude"
+                            value={formData.KeyInformationtoInclude}
+                            onChange={handleChange}
+                            className="form-input"
+
+                        />
+
+                    </div>
+
+                    <div className='form-div'>
+
+                        <label className="form-label"> Call to Action  :</label>
+                        <input
+                            type="text"
+                            id="desiredOutcomes"
+                            name="CalltoAction"
+                            value={formData.CalltoAction}
+                            onChange={handleChange}
+                            placeholder='(if applicable)'
+                            className="form-input"
+
+                        />
+                    </div>
+                    <h2> Design Inspiration</h2>
+                    <div className='form-div'>
+                        <label className="form-label">Reference Designs/Images (Attach files or provide links):</label>
+
+                        <input type="file" onChange={handleFileChange} ></input>
+                        {selectedFile && <p> {selectedFile.name}</p>}
+                    </div>
+                    <h2>Additional Information:</h2>
+                    <div className='form-div'>
+
+                        <label className="form-label">Design Style Preferences:</label>
+                        <input
+                            type="text"
+                            id="desiredOutcomes"
+                            name="DesignStylePreferences"
+                            value={formData.DesignStylePreferences}
+                            onChange={handleChange}
+                            className="form-input"
+                            placeholder='(Minimalist, Vintage, Modern, etc.)'
 
                         />
                     </div>
 
 
-                </div>
-                <h2>Project Objectives:</h2>
-                <div className='form-div'>
-                    <label className="form-label">Target Audience:</label>
-                    <input
-                        type="text"
-                        id="desiredOutcomes"
-                        name="targetaudience"
-                        value={formData.targetaudience}
-                        onChange={handleChange}
-                        className="form-input"
+                    <div className='form-div'>
 
-                    />
+                        <label className="form-label"> Any Other Specific Requirements:</label>
+                        <input
+                            type="text"
+                            id="desiredOutcomes"
+                            name="AnyOtherSpecificRequirements"
+                            value={formData.AnyOtherSpecificRequirements}
+                            onChange={handleChange}
+                            className="form-input"
 
-                </div>
-                <div className='form-div'>
-                    <label className="form-label"> Purpose:</label>
-                    <input
-                        type="text"
-                        id="desiredOutcomes"
-                        name="Purpose"
-                        value={formData.Purpose}
-                        onChange={handleChange}
-                        className="form-input"
-                        placeholder=' Message/Feeling to Convey'
+                        />
+                    </div>
+                    <h2> Delivery Information:</h2>
+                    <div className='form-div'>
+                        <label className="form-label">Preferred File Format (JPEG, PNG, PDF, etc.):</label>
 
-                    />
+                        <input type="file" onChange={handleFileChange} ></input>
+                        {selectedFile && <p> {selectedFile.name}</p>}
+                    </div>
 
-                </div>
-                <div className='form-div'>
-                    <label className="form-label">  Key Information to Include:</label>
-                    <input
-                        type="text"
-                        id="desiredOutcomes"
-                        name="KeyInformationtoInclude"
-                        value={formData.KeyInformationtoInclude}
-                        onChange={handleChange}
-                        className="form-input"
+                    <div className='form-div'>
 
-                    />
+                        <label className="form-label"> Delivery Method :</label>
+                        <input
+                            type="text"
+                            id="desiredOutcomes"
+                            name="DeliveryMethod"
+                            value={formData.DeliveryMethod}
+                            onChange={handleChange}
+                            placeholder='(Email, Cloud Storage, etc.)'
+                            className="form-input"
 
-                </div>
+                        />
+                    </div>
+                    <div className='form-div'>
 
-                <div className='form-div'>
+                        <label className="form-label"> Drop Box insert here:</label>
+                        <input
+                            type="text"
+                            id="desiredOutcomes"
+                            name="DropBoxinserthere"
+                            value={formData.DropBoxinserthere}
+                            onChange={handleChange}
+                            className="form-input"
+                        />
+                    </div>
+                    <div className='seo-button'>
 
-                    <label className="form-label"> Call to Action  :</label>
-                    <input
-                        type="text"
-                        id="desiredOutcomes"
-                        name="CalltoAction"
-                        value={formData.CalltoAction}
-                        onChange={handleChange}
-                        placeholder='(if applicable)'
-                        className="form-input"
-
-                    />
-                </div>
-                <h2> Design Inspiration</h2>
-                <div className='form-div'>
-                    <label className="form-label">Reference Designs/Images (Attach files or provide links):</label>
-
-                    <input type="file" onChange={handleFileChange} ></input>
-                    {selectedFile && <p> {selectedFile.name}</p>}
-                </div>
-                <h2>Additional Information:</h2>
-                <div className='form-div'>
-
-                    <label className="form-label">Design Style Preferences:</label>
-                    <input
-                        type="text"
-                        id="desiredOutcomes"
-                        name="DesignStylePreferences"
-                        value={formData.DesignStylePreferences}
-                        onChange={handleChange}
-                        className="form-input"
-                        placeholder='(Minimalist, Vintage, Modern, etc.)'
-
-                    />
-                </div>
-
-
-                <div className='form-div'>
-
-                    <label className="form-label"> Any Other Specific Requirements:</label>
-                    <input
-                        type="text"
-                        id="desiredOutcomes"
-                        name="AnyOtherSpecificRequirements"
-                        value={formData.AnyOtherSpecificRequirements}
-                        onChange={handleChange}
-                        className="form-input"
-
-                    />
-                </div>
-                <h2> Delivery Information:</h2>
-                <div className='form-div'>
-                    <label className="form-label">Preferred File Format (JPEG, PNG, PDF, etc.):</label>
-
-                    <input type="file" onChange={handleFileChange} ></input>
-                    {selectedFile && <p> {selectedFile.name}</p>}
-                </div>
-
-                <div className='form-div'>
-
-                    <label className="form-label"> Delivery Method :</label>
-                    <input
-                        type="text"
-                        id="desiredOutcomes"
-                        name="DeliveryMethod"
-                        value={formData.DeliveryMethod}
-                        onChange={handleChange}
-                        placeholder='(Email, Cloud Storage, etc.)'
-                        className="form-input"
-
-                    />
-                </div>
-                <div className='form-div'>
-
-                    <label className="form-label"> Drop Box insert here:</label>
-                    <input
-                        type="text"
-                        id="desiredOutcomes"
-                        name="DropBoxinserthere"
-                        value={formData.DropBoxinserthere}
-                        onChange={handleChange}
-                        className="form-input"
-                    />
-                </div>
-                <div className='seo-button'>
-
-                    <button type="submit" className="submit-button">Submit</button>
-                </div>
-            </form>
-        </div>
+                        <button type="submit" className="submit-button">Submit</button>
+                    </div>
+                    <Link to='/services'>Do you Want more Services?</Link>
+                </form>
+            </div>
+        </Fragment>
     );
 };
 

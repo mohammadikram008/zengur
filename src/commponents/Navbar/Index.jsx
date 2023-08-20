@@ -167,68 +167,68 @@ export default function Navbar() {
                             </Link>
                             {/* <span className="line">|</span> */}
 
-                            <ScrollLink
-                                to="about-section" // Replace 'home-section' with the ID of the section you want to scroll to
+                            <Link
+                                to="/services" // Replace 'home-section' with the ID of the section you want to scroll to
                                 spy={true}
                                 smooth={true}
                                 offset={-70} // Adjust the offset if you have a fixed navbar that overlaps the section
                                 duration={500}
                                 className="scroll-to-top"
                             >
-                                <Link to='/#about-section'>
-                                    <Button
-                                        // className="nav-item"
-                                        color="inherit"
-                                        onClick={handleChangeButton}
-                                        variant="text"
-                                        style={{
-                                            color: "black",
-                                            margin: "auto 23px",
-                                            textTransform: "capitalize",
-                                            fontSize: "1rem",
-                                            // fontFamily: `PublicSans,'sans-serif'`,
-                                        }}
-                                    >
-                                        Services
-                                    </Button>
-                                </Link>
-                            </ScrollLink>
+                                {/* <Link to='/#about-section'> */}
+                                <Button
+                                    // className="nav-item"
+                                    color="inherit"
+                                    onClick={handleChangeButton}
+                                    variant="text"
+                                    style={{
+                                        color: "black",
+                                        margin: "auto 23px",
+                                        textTransform: "capitalize",
+                                        fontSize: "1rem",
+                                        // fontFamily: `PublicSans,'sans-serif'`,
+                                    }}
+                                >
+                                    Services
+                                </Button>
+                                {/* </Link> */}
+                            </Link>
                             {/* <span className="line">|</span> */}
-                            <ScrollLink
+                            {/* <ScrollLink
                                 to="aboutus" // Replace 'home-section' with the ID of the section you want to scroll to
                                 spy={true}
                                 smooth={true}
                                 offset={-70} // Adjust the offset if you have a fixed navbar that overlaps the section
                                 duration={500}
                                 className="scroll-to-top"
+                            > */}
+
+                            <Link
+
+                                to="/aboutus"
+                                underline="none"
+                                className={navbarOpen ? "toolbar-btn" : "nav-items"}
                             >
 
-                                <Link
-
-                                    to="/#aboutus"
-                                    underline="none"
-                                    className={navbarOpen ? "toolbar-btn" : "nav-items"}
+                                <Button
+                                    // className="nav-item"
+                                    variant="text"
+                                    onClick={handleChangeButton}
+                                    style={{
+                                        color: "black",
+                                        margin: "auto 23px",
+                                        fontSize: "1rem",
+                                        textTransform: "capitalize",
+                                        // fontFamily: `PublicSans,'sans-serif'`,
+                                    }}
                                 >
-
-                                    <Button
-                                        // className="nav-item"
-                                        variant="text"
-                                        onClick={handleChangeButton}
-                                        style={{
-                                            color: "black",
-                                            margin: "auto 23px",
-                                            fontSize: "1rem",
-                                            textTransform: "capitalize",
-                                            // fontFamily: `PublicSans,'sans-serif'`,
-                                        }}
-                                    >
-                                        About Us
-                                    </Button>
-                                </Link>
-                            </ScrollLink>
+                                    About Us
+                                </Button>
+                            </Link>
+                            {/* </ScrollLink> */}
                             {/* <span className="line">|</span> */}
                             <ScrollLink
-                                to="faq" // Replace 'home-section' with the ID of the section you want to scroll to
+                                to="contact-section" // Replace 'home-section' with the ID of the section you want to scroll to
                                 spy={true}
                                 smooth={true}
                                 offset={-70} // Adjust the offset if you have a fixed navbar that overlaps the section
@@ -326,6 +326,7 @@ export default function Navbar() {
                                 flexDirection: "row",
                                 right: "20px",
                             }}
+                            className="navbar-btn"
                         >
                             {/* <Link href="/login" underline="none">
                 <Button
@@ -370,12 +371,29 @@ export default function Navbar() {
                                     <a >{data ? "Logout" : "login"}</a>
                                 </Button>
                             </Link> */}
-                            <Link to="/webpage">
-                                <Button
+                            <Link to="/webpage"
+
+                                style={{
+                                    color: "white",
+                                    margin: "auto 23px",
+                                    fontSize: "16px",
+                                    fontWeight: "600",
+                                    border: "1px solid #A6A8AA",
+                                    borderRadius: "10px",
+                                    backgroundColor: "#7181D9",
+                                    textTransform: "capitalize",
+                                    letterSpacing: "-0.1px",
+                                    padding: "10px",
+                                    textDecoration: "none"
+
+
+                                }}
+                            >
+                                {/* <Button
 
                                     className="nav-item"
                                     variant="text"
-                                    id={navbarOpen ? "nav-btn-open" : ""}
+                                    // id={navbarOpen ? "nav-btn-open" : ""}
                                     style={{
                                         color: "white",
                                         margin: "auto 23px",
@@ -388,15 +406,15 @@ export default function Navbar() {
                                         letterSpacing: "-0.1px"
 
 
-                                    }}
+                                    }} */}
 
 
 
-                                // disableElevation
-                                >
-                                    REQUEST QUOTE
-                                    {/* <a onClick={clearData }>{data?"Logout":"login"}</a> */}
-                                </Button>
+
+                                {/* > */}
+                                REQUEST QUOTE
+                                {/* <a onClick={clearData }>{data?"Logout":"login"}</a> */}
+                                {/* </Button> */}
                             </Link>
                         </Box>
                     )}
